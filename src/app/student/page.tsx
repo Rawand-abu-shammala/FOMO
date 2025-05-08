@@ -1,12 +1,8 @@
 import React from 'react'
 
-interface Props {
-    
-}
-
-const Student = (props: Props) => {
+const Student = () => {
     return (
-        <div>
+        <div className='text-primary'>
             student side
         </div>
     )
