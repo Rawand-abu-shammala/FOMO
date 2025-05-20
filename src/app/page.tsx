@@ -1,6 +1,6 @@
 'use client'
 
-import { ProfileCircle } from "@/components/icons";
+// import { ProfileCircle } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 
@@ -8,11 +8,11 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 space-y-6 p-4">
       {/* Profile Icon Header */}
-      <header className="w-full flex justify-end p-4">
+      {/* <header className="w-full flex justify-end p-4">
         <span className="text-lg font-bold text-primary">
           <ProfileCircle />
         </span>
-      </header>
+      </header> */}
 
       {/* Main Content */}
       <main className="flex flex-col items-center space-y-4">
@@ -21,6 +21,7 @@ export default function Home() {
         <div className="flex space-x-4">
           <Button variant="outline" size="lg" className="bg-blue-600">
             <Link href="/signup">Sign Up</Link>
+            
           </Button>
           <Button size="lg">
             <Link href="/login">Sign In</Link>

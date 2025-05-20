@@ -5,19 +5,13 @@ import { useRouter } from "next/navigation";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-// Import icon components generated via SVGR
 import UserIcon from "@/components/icons/frame";
 import MailIcon from "@/components/icons/sms";
 import LockIcon from "@/components/icons/lock";
 import CalendarIcon from "@/components/icons/calender-svgrepo-com";
 import EyeIcon from "@/components/icons/eye-slash";
 import EyeOffIcon from "@/components/icons/eye-svgrepo-com";
-// import ArrowDown from "@/components/icons/arrow-down";
 
-// import ChevronDownIcon from "@/components/icons/ChevronDownIcon";
-
-// import UploadIcon from "@/components/icons/UploadIcon";
 interface FormData {
   role: "student" | "mentor";
   firstName: string;
@@ -36,9 +30,7 @@ interface FormData {
 
 export default function SignupForm() {
   const router = useRouter();
-  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [confiremPassword, setConfiremPassword] = useState("");
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [step, setStep] = useState<1 | 2>(1);
   const [data, setData] = useState<FormData>({
@@ -105,18 +97,18 @@ export default function SignupForm() {
         }
       });
 
-      await axios.post('/api/signup', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      await axios.post("/api/signup", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
 
-      toast.success('Signed up successfully');
-      router.replace('/home');
+      toast.success("Signed up successfully");
+      router.replace("/home");
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         const axiosError = error as AxiosError<{ message?: string }>;
-        toast.error(axiosError.response?.data?.message || 'Signup failed');
+        toast.error(axiosError.response?.data?.message || "Signup failed");
       } else {
-        toast.error('Signup failed');
+        toast.error("Signup failed");
       }
     } finally {
       setLoading(false);
@@ -130,8 +122,8 @@ export default function SignupForm() {
         <img
           src={
             step === 1
-              ? '/assets/images/Sign up-amico 1.png'
-              : '/assets/images/Sign up-rafiki 1.png'
+              ? "/assets/images/Sign up-amico 1.png"
+              : "/assets/images/Sign up-rafiki 1.png"
           }
           alt="Signup Illustration"
           className="max-w-full h-auto"
@@ -147,35 +139,34 @@ export default function SignupForm() {
           <h1 className="text-3xl font-bold text-center">Sign Up</h1>
           <p className="text-gray-600 text-center">
             {step === 1
-              ? 'Join us today and unlock access to exclusive features. Sign up in just a few steps and start your journey with us!'
-              : 'Join us today for exclusive features—sign up in seconds!'}
+              ? "Join us today and unlock access to exclusive features. Sign up in just a few steps and start your journey with us!"
+              : "Join us today for exclusive features—sign up in seconds!"}
           </p>
 
           {step === 1 && (
             <>
-            <label className="block font-medium">I Went To</label>
+              <label className="block font-medium">I Went To</label>
               <div className="flex space-x-4">
-                {(['student', 'mentor'] as const).map((role) => (
+                {(["student", "mentor"] as const).map((role) => (
                   <button
                     key={role}
                     type="button"
                     onClick={() => setData((p) => ({ ...p, role }))}
-                  // className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
                     className={`flex-1 py-3 rounded-lg border text-center font-medium transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                      data.role === role ? 'bg-white shadow border-none' : 'bg-gray-100 border-none'
+                      data.role === role
+                        ? "bg-white shadow border-none"
+                        : "bg-gray-100 border-none"
                     }`}
                   >
-                    {role === 'student' ? 'Student' : 'Mentor'}
+                    {role === "student" ? "Student" : "Mentor"}
                   </button>
                 ))}
               </div>
-                <label className="block font-medium">First Name</label>
 
+              <label className="block font-medium">First Name</label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="relative">
                   <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-
                   <input
                     name="firstName"
                     placeholder="First Name"
@@ -184,8 +175,6 @@ export default function SignupForm() {
                     className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
-                
-
                 <div className="relative">
                   <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                   <input
@@ -197,8 +186,8 @@ export default function SignupForm() {
                   />
                 </div>
               </div>
-              <label className="block font-medium">Email</label>
 
+              <label className="block font-medium">Email</label>
               <div className="relative">
                 <MailIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <input
@@ -208,189 +197,114 @@ export default function SignupForm() {
                   value={data.email}
                   onChange={handleChange}
                   className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
                 />
               </div>
 
-
               <label className="block font-medium">Password</label>
               <div className="relative">
-               <LockIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-               <input
-                name="password"
-                type={showPassword ? 'text' : 'password'}
-                placeholder="Password"
-                value={password}
-                // value={data.password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                <LockIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  value={data.password}
+                  onChange={handleChange}
+                  className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((s) => !s)}
+                  className="absolute top-1/2 right-3 transform -translate-y-1/2"
+                >
+                  {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                </button>
+              </div>
 
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword((s) => !s)}
-                className="absolute top-1/2 right-3 transform -translate-y-1/2"
-              >
-                {showPassword ? (
-                  <EyeOffIcon />
-                  
-                ) : (
-                  <EyeIcon />
-
-                )}
-              </button>
-            </div>
-
-
-
-              <label className="block font-medium">Confirem Password</label>
+              <label className="block font-medium">Confirm Password</label>
               <div className="relative">
-               <LockIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-               <input
-                name="confirmPassword"
-                type={showConfirmPassword ? 'text' : 'password'}
-                placeholder="Confirm Password"
-                value={confiremPassword}
-                // value={data.password}
-                onChange={(e) => setConfiremPassword(e.target.value)}
-                className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="button"
-                onClick={() => setShowConfirmPassword((s) => !s)}
-                className="absolute top-1/2 right-3 transform -translate-y-1/2"
-              >
-                {showConfirmPassword ? (
-                  <EyeOffIcon />
-                  
-                ) : (
-                  <EyeIcon />
+                <LockIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  name="confirmPassword"
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Confirm Password"
+                  value={data.confirmPassword}
+                  onChange={handleChange}
+                  className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 
-                )}
-              </button>
-            </div>
-
-              {/* </div> */}
+               
+               />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword((s) => !s)}
+                  className="absolute top-1/2 right-3 transform -translate-y-1/2"
+                >
+                  {showConfirmPassword ? <EyeOffIcon /> : <EyeIcon />}
+                </button>
+              </div>
 
               <label className="block font-medium">Date Of Birth</label>
               <div className="grid grid-cols-3 gap-4">
-                <div className="relative">
-                  <CalendarIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                  <input
-                    name="dob.dd"
-                    placeholder="DD"
-                    value={data.dob.dd}
-                    onChange={handleChange}
-                    className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-             
-                <div className="relative">
-                <CalendarIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-
-                <input
-                  name="dob.mm"
-                  placeholder="MM"
-                  value={data.dob.mm}
-                  onChange={handleChange}
-                  className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                  // className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500"
-
-                />
-                </div>
-                <div className="relative">
-                  <CalendarIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-
-                <input
-                  name="dob.yyyy"
-                  placeholder="YYYY"
-                  value={data.dob.yyyy}
-                  onChange={handleChange}
-                  className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                  // className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500"
-                />
-                </div>
+                {(["dd", "mm", "yyyy"] as const).map((field) => (
+                  <div key={field} className="relative">
+                    <CalendarIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <input
+                      name={`dob.${field}`}
+                      placeholder={field.toUpperCase()}
+                      value={data.dob[field]}
+                      onChange={handleChange}
+                      className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                ))}
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                className="w-full pt-3 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
               >
                 Next
               </button>
             </>
           )}
 
-
-
-
-
-
-
-
-
-
-
-
-
           {step === 2 && (
             <>
-            <label className="block font-medium">Pronoun</label>
-              <div className="flex space-x-4 relative">
+              <label className="block font-medium">Pronoun</label>
+              <select
+                name="pronoun"
+                value={data.pronoun}
+                onChange={handleChange}
+                className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select pronoun…</option>
+                <option value="he">he</option>
+                <option value="she">she</option>
+                <option value="they">they</option>
+              </select>
 
-                
-                  <select
-                  name="pronoun"
-                  value={data.pronoun}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-
-                >
-                  <option value="">Select pronoun…</option>
-                  <option value="he">he</option>
-                  <option value="she">she</option>
-                  <option value="they">they</option>
-                </select>
-              </div>
-
-              <label className="block font-medium">Major </label>
-
-              <div className="relative">
-                {/* <ArrowDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" /> */}
-
-                <select
-                  name="major"
-                  value={data.major}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                  // className="w-full appearance-none py-3 px-4 bg-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500"
-                >
-                  <option value="">Select major…</option>
-                  <option value="software engineering">software engineering</option>
-                  <option value="uxui design">uxui design</option>
-                  <option value="computer science">computer science</option>
-                </select>
-                {/* <ChevronDownIcon className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" /> */}
-              </div>
+              <label className="block font-medium">Major</label>
+              <select
+                name="major"
+                value={data.major}
+                onChange={handleChange}
+                className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select major…</option>
+                <option value="software engineering">
+                  software engineering
+                </option>
+                <option value="uxui design">uxui design</option>
+                <option value="computer science">computer science</option>
+              </select>
 
               <label className="block font-medium">Add Your Profile Photo</label>
-              {/* <label className="flex items-center p-3 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition"> */}
-                {/* <UploadIcon className="mr-3 text-gray-500" /> */}
-                {/* <span>Add your profile</span> */}
-                <input type="file"
-                 accept="image/*"
-                  onChange={handleFile}
-                  //  className="hidden"
-                  // className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleFile}
+                className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
 
-                   placeholder="Add Your Profile"
-                    />
-              {/* </label> */}
               <label className="block font-medium">Goals</label>
               <input
                 name="goals"
@@ -398,10 +312,9 @@ export default function SignupForm() {
                 value={data.goals}
                 onChange={handleChange}
                 className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                // className="w-full py-3 px-4 bg-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500"
               />
-             <label className="block font-medium">Bio</label>
+
+              <label className="block font-medium">Bio</label>
               <textarea
                 name="bio"
                 rows={3}
@@ -409,22 +322,20 @@ export default function SignupForm() {
                 value={data.bio}
                 onChange={handleChange}
                 className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                // className="w-full py-3 px-4 bg-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500"
               />
-              <label className="block font-medium">Linkedin Profile</label>
+
+              <label className="block font-medium">LinkedIn Profile</label>
               <input
                 name="linkedin"
                 placeholder="LinkedIn URL"
                 value={data.linkedin}
                 onChange={handleChange}
-               className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                // className="w-full py-3 px-4 bg-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
 
               <div className="text-sm text-gray-500">
-                By Clicking “Sign Up”, I Agree To Terms Of Condition & Privacy Policy
+                By clicking “Sign Up”, I agree to Terms of Service & Privacy
+                Policy.
               </div>
 
               <button
@@ -432,7 +343,7 @@ export default function SignupForm() {
                 disabled={loading}
                 className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
               >
-                {loading ? 'Signing…' : 'Sign Up'}
+                {loading ? "Signing…" : "Sign Up"}
               </button>
             </>
           )}
@@ -441,4 +352,5 @@ export default function SignupForm() {
     </div>
   );
 }
+
 
