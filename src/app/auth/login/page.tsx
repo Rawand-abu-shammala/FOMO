@@ -21,7 +21,7 @@ export default function LoginPage() {
      
 
           <div className="flex justify-center items-center space-x-2 mb-4 text-blue-500">
-      <Logo className="w-15 h-15" />
+      <Logo className="w-22 h-22" />
       <span className="text-xl font-bold">FOMO</span>
     </div>
 

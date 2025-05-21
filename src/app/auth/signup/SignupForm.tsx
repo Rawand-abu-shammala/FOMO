@@ -11,6 +11,7 @@ import LockIcon from "@/components/icons/lock";
 import CalendarIcon from "@/components/icons/calender-svgrepo-com";
 import EyeIcon from "@/components/icons/eye-slash";
 import EyeOffIcon from "@/components/icons/eye-svgrepo-com";
+import Link from "next/link";
 
 interface FormData {
   role: "student" | "mentor";
@@ -334,14 +335,19 @@ export default function SignupForm() {
               />
 
               <div className="text-sm text-gray-500">
-                By clicking “Sign Up”, I agree to Terms of Service & Privacy
-                Policy.
+                By clicking “Sign Up”, I agree to Terms of <Link
+                 href="/privacy-policy"
+                 className="text-blue-600 hover:underline"
+                 >
+                  Service & Privacy Policy.
+                </Link>.
+                 
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                className="w-full pt-3 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
               >
                 {loading ? "Signing…" : "Sign Up"}
               </button>

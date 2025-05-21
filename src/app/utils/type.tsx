@@ -16,24 +16,8 @@ export interface Post {
   createdAt: string
 }
 
-// export interface Section {
-//   heading: string;
-//   body: string;
-// }
-// export interface ResourceLink {
-//   label: string;
-//   href: string;
-// }
-// export interface Resources {
-//   learningPlatforms: ResourceLink[];
-//   recommendedBooks: ResourceLink[];
-//   tools: ResourceLink[];
-// }
-// export interface Project {
-//   slug: string;
-//   title: string;
-//   description: string;
-//   heroImage: string;
-//   sections: Section[];
-//   resources: Resources;
-// }
+export interface Section {
+  title: string;
+  description?: string;
+  items?: string[];
+}

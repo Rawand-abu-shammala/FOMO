@@ -39,78 +39,6 @@ export const cards: Card[] = [
   },
 ];
 
-// export const projectData: Project = {
-
-//   slug: 'software-engineering',
-//   title: 'Software Engineering: Bridging Academia And The Job Market',
-//   description:
-//     'Software engineering is a dynamic field that blends theoretical knowledge with practical applications. In this article, we’ll explore how students can leverage university courses to bridge the gap between theory and industry demands.',
-//   heroImage: '/images/software-engineering-hero.png', // ضع مسار الصورة الصحيح
-//   sections: [
-//     {
-//       heading: 'Academic Disciplines In The Technology Field',
-//       body: `1. Computer Science (CS)
-// Focus: Algorithms, data structures, computational theory, and problem-solving.
-// Key Courses: Discrete mathematics, operating systems, artificial intelligence, and software architecture.
-// Industry Connection: Foundational for software engineering, AI development, and cybersecurity.
-
-// 2. Information Technology (IT)
-// Focus: IT infrastructure, networking, databases, and security.
-// Key Courses: Network administration, cloud computing, IT security, and database management.
-// Industry Connection: Essential for system administration, cloud engineering, and IT support.
-
-// 3. Software Engineering (SE)
-// Focus: Applying engineering principles to software development.
-// Key Courses: Software development life cycle (SDLC), Agile methodologies, DevOps, and software testing.
-// Industry Connection: Directly aligned with software development, DevOps engineering, and QA testing.
-
-// 4. Data Science & Artificial Intelligence
-// Focus: Data analysis, machine learning, deep learning, and AI ethics.
-// Key Courses: Statistics, Python for data science, machine learning models, and big data technologies.
-// Industry Connection: Crucial for data analytics, AI engineering, and business intelligence roles.
-
-// 5. Cybersecurity
-// Focus: Protecting systems from cyber threats and vulnerabilities.
-// Key Courses: Cryptography, ethical hacking, digital forensics, and network security.
-// Industry Connection: Leads to careers in cybersecurity analysis, ethical hacking, and penetration testing.`,
-//     },
-//     {
-//       heading: 'Bridging The Gap: How To Leverage University Courses For The Job Market',
-//       body: `1. Apply Theoretical Knowledge to Practical Projects: Work on real-world projects, open-source contributions, and internships.
-
-// 2. Learn Industry Tools & Technologies: Git, Docker, Kubernetes, AWS, Azure, GCP, DevOps methodologies.
-
-// 3. Participate in Coding Competitions & Hackathons: Platforms like LeetCode, Codeforces, and Kaggle.
-
-// 4. Network with Industry Professionals: Meetups, LinkedIn, conferences, and online communities (Reddit, Discord, Stack Overflow).
-
-// 5. Gain Certifications & Specialized Training: AWS Certified Developer, Google Cloud Engineer, CompTIA Security.
-
-// 6. Develop Soft Skills & Business Acumen: Communication, teamwork, problem-solving, project management, and client collaboration.`,
-//     },
-//   ],
-//   resources: {
-//     learningPlatforms: [
-//       { label: 'Coursera', href: 'https://www.coursera.org' },
-//       { label: 'Udemy', href: 'https://www.udemy.com' },
-//       { label: 'EdX', href: 'https://www.edx.org' },
-//       { label: 'Pluralsight', href: 'https://www.pluralsight.com' },
-//     ],
-//     recommendedBooks: [
-//       { label: 'Clean Code: A Handbook Of Agile Software Craftsmanship', href: '#' },
-//       { label: 'Design Patterns: Elements Of Reusable Object-Oriented Software', href: '#' },
-//       { label: 'Code Complete', href: '#' },
-//     ],
-//     tools: [
-//       { label: 'Visual Studio Code', href: 'https://code.visualstudio.com' },
-//       { label: 'Docker', href: 'https://www.docker.com' },
-//       { label: 'Postman', href: 'https://www.postman.com' },
-//     ],
-//   },
-// };
-
-
-
 
 
 import { Card as CardType } from './type'
@@ -154,3 +82,82 @@ const tracks: CardType[] = [
 ]
 
 export default tracks
+
+
+
+import { Section } from './type';
+
+
+export const sections: Section[] = [
+  {
+    title: "1. Information We Collect",
+    description: "We may collect the following types of information:",
+    items: [
+      "Personal Information: Name, email address, phone number, and other contact details.",
+      "Usage Data: Information about how you use our platform, including pages visited and time spent.",
+      "Technical Data: IP address, browser type, device information, and cookies.",
+    ],
+  },
+  {
+    title: "2. How We Use Your Information",
+    description: "We use your personal information to:",
+    items: [
+      "Provide and improve our services.",
+      "Personalize your user experience.",
+      "Communicate important updates, newsletters, and promotional offers.",
+      "Analyze usage trends and improve platform performance.",
+      "Ensure platform security and prevent unauthorized access.",
+    ],
+  },
+  {
+    title: "3. Cookies and Tracking Technologies",
+    description: "FOMO Techno uses cookies to enhance user experience by:",
+    items: [
+      "Remembering user preferences.",
+      "Collecting analytical data to improve functionality.",
+      "Enabling targeted advertisements where applicable. You can adjust your cookie preferences through your browser settings.",
+    ],
+  },
+  {
+    title: "4. Sharing Your Information",
+    description: "We do not sell or trade your personal information. However, we may share information with:",
+    items: [
+      "Service Providers: For hosting, analytics, and security services.",
+      "Legal Authorities: When required by law or to protect our legal rights.",
+      "Business Partners: In cases of partnerships or collaborations, with your consent.",
+    ],
+  },
+  {
+    title: "5. Data Security",
+    description: "We implement industry-standard security measures to secure your data:",
+    items: [
+      "Protecting your personal information from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure.",
+    ],
+  },
+  {
+    title: "6. Your Rights",
+    description: "You have the right to:",
+    items: [
+      "Access, correct, or delete your personal information.",
+      "Withdraw consent for data processing where applicable.",
+      "Object to the processing of your data for specific purposes.",
+      "To exercise your rights, please contact us using the information provided below.",
+    ],
+  },
+  {
+    title: "7. Third-Party Links",
+    description: "FOMO Techno may contain links to third-party websites. We are not responsible for the privacy practices or content of those sites.",
+
+  },
+  {
+    title: "8. Children's Privacy",
+    description: "Our platform is not intended for children under the age of 13. We do not knowingly collect personal information from minors without parental consent.",
+
+  },
+  {
+    title: "9. Changes to This Policy",
+    description: "We reserve the right to modify this Privacy Policy at any time. Changes will be effective upon posting on our website. Please review this policy periodically for updates.",
+
+  },
+];
+
