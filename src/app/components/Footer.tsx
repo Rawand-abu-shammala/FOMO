@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-8 py-12
                       grid grid-cols-1 lg:grid-cols-2
                       gap-y-16
-                      gap-x-1    /* صغرنا الفجوة الأفقية لأقل حد */
+                      gap-x-1    
                       items-start">
         
         <div className="flex flex-col space-y-6 px-4 max-w-xs">
