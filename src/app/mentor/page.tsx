@@ -1,15 +1,15 @@
-import React from 'react'
+// import React from 'react'
 
-interface Props {
+// interface Props {
     
-}
+// }
 
-const Mentor = (props: Props) => {
-    return (
-        <div>
-            mentor side
-        </div>
-    )
-}
+// const Mentor = (props: Props) => {
+//     return (
+//         <div>
+//             mentor side
+//         </div>
+//     )
+// }
 
-export default Mentor
+// export default Mentor
