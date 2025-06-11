@@ -1,9 +1,166 @@
 export interface Card {
-  id: string;
+  slug: string;
   title: string;
   description: string;
   image: string;
 }
+
+// utils/type.ts
+export interface CardType {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface ArticleSection {
+  title: string;
+  paragraphs: string[]; // كل فقرة كنص مستقل
+  // لو حابب تضيف صورة خاصة بكل قسم، ممكن تضيف حقل image?: string
+  // لكن هنا سنستخدم صورة ثانية عامة للمقال
+}
+
+export interface Resource {
+  title: string;
+  url: string;
+}
+
+export interface ArticleData extends CardType {
+  intro: string;
+  secondImage: string; // مسار الصورة الثانية داخل public/images
+  sections: ArticleSection[];
+  resources: Resource[];
+}
+
+
+// utils/type.ts
+export interface CardType {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface ArticleSection {
+  title: string;
+  paragraphs: string[];
+}
+
+export interface Resource {
+  title: string;
+  url: string;
+}
+
+export interface ArticleData extends CardType {
+  intro: string;
+  secondImage: string;
+  sections: ArticleSection[];
+  resources: Resource[];
+}
+
+
+// export interface PageData {
+//   slug: string;
+//   title: string;
+//   subtitle: string;
+//   headerImage: string;
+//   content: string;
+// }
+
+// export interface PageData {
+//   slug: string;
+//   title: string;
+//   subtitle: string;
+//   headerImage: string;
+//   content: string; // Markdown
+// }
+
+
+// export interface ResourceLink { name: string; url: string; }
+// export interface PageData {
+//   slug: string;
+//   title: string;
+//   subtitle: string;
+//   headerImage: string;
+//   content: string; // markdown نص الفقرات والصور
+//   resources?: {
+//     learningPlatforms?: ResourceLink[];
+//     recommendedBooks?: ResourceLink[];
+//     tools?: ResourceLink[];
+//   };
+// }
+
+
+// export interface PageData {
+//   slug: string;
+//   title: string;
+//   subtitle: string;
+//   headerImage: string;
+//   secondaryImage: string;
+//   content: string;
+// }
+
+
+// export interface PageData {
+//   slug: string;
+//   title: string;
+//   subtitle?: string;
+//   headerImage: string;
+//   secondaryImage?: string;
+//   sections: Section[];
+// }
+
+// utils/type.ts
+
+// export interface Section {
+//   heading: string;
+//   text?: string;
+//   items?: string[];
+// }
+
+
+// export interface PageData {
+//   slug: string;
+//   title: string;
+//   subtitle?: string;
+//   headerImage: string;
+//   secondaryImage?: string;
+//   sections: Section[];
+// }
+
+
+// utils/type.ts
+export interface Section {
+  title: string; // يجب أن يتطابق هذا مع بيانات القسم
+  text?: string;
+  items?: string[];
+}
+
+export interface PageData {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  headerImage: string;
+  secondaryImage?: string;
+  sections: Section[]; // تأكد من أن هذا الحقل موجود هنا
+}
+
+
+// export interface Card {
+//   id: string;
+//   title: string;
+//   description: string;
+//   image: string;
+// }
+
+
+// export type Card = {
+//   slug: string;
+//   title: string;
+//   description: string;
+//   image: string;
+// };
+
 
 export interface Post {
   id: number
@@ -16,11 +173,11 @@ export interface Post {
   createdAt: string
 }
 
-export interface Section {
-  title: string;
-  description?: string;
-  items?: string[];
-}
+// export interface Section {
+//   title: string;
+//   description?: string;
+//   items?: string[];
+// }
 
 export interface SearchParams {
   category?: string;
@@ -351,3 +508,25 @@ export interface FeaturedPostProps {
 }
 
 // … remaining interfaces/types …
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
