@@ -1,6 +1,7 @@
 export { default as ArrowDown } from "./arrow-down";
 export { default as ArrowLeft } from "./arrow-left";
 export { default as ArrowRight } from "./arrow-right";
+export { default as BannerTracks } from "./banner-tracks";
 export { default as CalenderSvgrepoCom } from "./calender-svgrepo-com";
 export { default as Call } from "./call";
 export { default as Check } from "./check";
@@ -19,6 +20,7 @@ export { default as Logosignin } from "./logosignin";
 export { default as MenuSvgrepoCom } from "./menu-svgrepo-com";
 export { default as ProfileCircle } from "./profile-circle";
 export { default as Save2 } from "./save-2";
+export { default as Search } from "./search";
 export { default as Sms } from "./sms";
 export { default as Sms2 } from "./sms2";
 export { default as Twitter } from "./twitter";

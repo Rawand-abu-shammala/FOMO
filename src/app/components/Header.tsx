@@ -93,7 +93,10 @@ import Profile from '@/components/icons/profile-circle'
 import Logo from '@/components/icons/logo'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input' // أو استخدم <input> عادي إذا لم تملك Input من shadcn/ui
-import { Search } from 'lucide-react' // أو أي أيقونة تبحث عنها
+// import { Search } from 'lucide-react'
+// import { Search } from '@/components/icons/se'
+// import { Search } from '@/components/icons/search'
+// import { Search }  from '@/components/icons/search'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -156,13 +159,7 @@ export default function Header() {
                 {t}
               </Link>
             ))}
-            {/* يمكن إضافة رابط للمسارات هنا */}
-            <Link
-              href="/track"
-              className={`hover:text-blue-600 ${pathname === '/track' ? 'text-blue-600 font-semibold' : ''}`}
-            >
-              Track
-            </Link>
+          
           </nav>
         </div>
 
@@ -172,7 +169,7 @@ export default function Header() {
             onSubmit={onSearchSubmit}
             className="relative hidden md:block mx-4 flex-shrink-0"
           >
-            <Search className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400" size={16} />
+            {/* <Search className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400" size={16} /> */}
             <Input
               type="text"
               placeholder="Search for track..."
@@ -180,6 +177,7 @@ export default function Header() {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-9 pr-3 py-1 text-sm w-64"
             />
+
           </form>
         )}
 
@@ -205,7 +203,7 @@ export default function Header() {
           {/* إذا في صفحة track ونريد عرض حقل البحث ضمن الموبايل: */}
           {showSearch && (
             <form onSubmit={onSearchSubmit} className="relative p-4">
-              <Search className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400" size={16} />
+              {/* <Search className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400" size={16} /> */}
               <Input
                 type="text"
                 placeholder="Search for track..."

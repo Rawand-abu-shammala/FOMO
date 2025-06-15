@@ -3,10 +3,8 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { articles } from '../utils/articles';
-import type { ArticleData } from '../utils/type';
-import Link from "next/link";
-import { ArrowRight } from '@/components/icons'
-
+import { ArticleData } from '../utils/type';
+import  Tab  from '../components/tab';
 
 interface Params {
   params: { slug: string };
@@ -20,14 +18,7 @@ export default function ArticlePage({ params }: Params) {
 
   return (
     <>
-    <div className="text-sm text-gray-500 mb-4 flex items-center">
-        <Link href="/" className="hover:underline">
-          Home
-        </Link>
-        <ArrowRight className="w-4 h-4 mx-2 text-gray-400" />
-        <span className="text-gray-700">{article.title}</span>
-      </div>
-
+    <Tab article={article} />
 
     <article className="max-w-4xl mx-auto py-12 px-4">
       
