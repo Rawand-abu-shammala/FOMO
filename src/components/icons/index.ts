@@ -11,6 +11,7 @@ export { default as EyeSlash } from "./eye-slash";
 export { default as EyeSvgrepoCom } from "./eye-svgrepo-com";
 export { default as Facebook } from "./facebook";
 export { default as Frame } from "./frame";
+export { default as Heart } from "./heart";
 export { default as Instagram } from "./instagram";
 export { default as Linkedin } from "./linkedin";
 export { default as Lock } from "./lock";

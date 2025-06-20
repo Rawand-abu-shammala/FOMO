@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import Card from '../components/Card';
+import TrackCard from '../components/TrackCard';
 import { Track } from '../utils/tracksData'; 
 
 interface TrackListProps {
@@ -46,9 +46,10 @@ export default function TrackList({ initialTracks, initialSearchTerm }: TrackLis
       {filteredTracks.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTracks.map((track) => (
-            <Card
+            < TrackCard
               key={track.slug}
-              href={`/tracks/${track.slug}`} // link to detail page
+              // link to detail page
+              href={`/tracks/${track.slug}`} 
               slug={track.slug}
               title={track.title}
               description={track.description}
