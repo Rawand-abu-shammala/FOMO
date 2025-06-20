@@ -37,7 +37,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import type { CardType } from '../utils/type'; // الآن CardType يحتوي href?
+import type { CardType } from '../utils/type'; 
 import { Card as UICard } from '@/components/ui/card';
 import { ArrowRight } from '@/components/icons';
 

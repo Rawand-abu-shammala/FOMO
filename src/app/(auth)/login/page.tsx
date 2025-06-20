@@ -10,7 +10,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex">
       <div className="hidden xl:flex flex-1 bg-blue-50 items-center justify-center p-10">
         <Image
-          src="/assets/images/Login-pana (1) 1.png"
+          src="/assets/images/Login-pana 1.svg"
           alt="login"
           width={450}
           height={450}

@@ -1,4 +1,6 @@
+
 // 'use client'; 
+// [slug]/page.tsx
 
 import { notFound } from 'next/navigation';
 import Image from 'next/image';

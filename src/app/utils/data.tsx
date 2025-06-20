@@ -43,7 +43,6 @@ export const cards: Card[] = [
 
 
 
-// utils/data.ts
 // import { PageData } from './type';
 
 // export const pages: PageData[] = [
@@ -133,9 +132,10 @@ export const cards: Card[] = [
 // ];
 
 // utils/data.ts
-import { PageData } from './type';
+// import { PageData } from './type';
 
-// utils/data.ts
+// utils/data.tsutils/data.ts
+
 // import { PageData } from './type';
 
 
@@ -223,295 +223,113 @@ import { PageData } from './type';
 
 // utils/data.ts
 
-export const pages: PageData[] = [
-  {
-    slug: 'software-engineering',
-    title: 'Software Engineering: Bridging Academia And The Job Market',
-    subtitle: 'How to align your academic journey with industry needs and land your first role.',
-    headerImage: '/assets/images/software-engineering-header.png',
-    secondaryImage: '/assets/images/software-engineering-secondary.png',
-    sections: [
-      {
-        title: 'Understanding the Difference Between Theory and Practice',
-        text: 'Explore how academic lessons translate to real-world engineering challenges and best practices to bridge the gap.',
-      },
-      {
-        title: 'Essential Skills Employers Look For',
-        items: ['Version Control (Git)', 'Testing and QA', 'Continuous Integration/Deployment'],
-      },
-      {
-        title: 'Building a Market-Ready Portfolio',
-        text: 'Tips for showcasing projects that demonstrate problem-solving, code quality, and scalability.',
-      },
-      {
-        title: 'Networking and Mentorship',
-        items: ['Tech Meetups', 'Open-Source Contributions', 'Informational Interviews'],
-      },
-      {
-        title: 'Interview Preparation',
-        items: ['Data Structures & Algorithms', 'System Design', 'Behavioral Rounds'],
-      },
-    ],
-  },
-  {
-    slug: 'learn-how-to-learn',
-    title: 'Learn How To Learn In The Tech Industry',
-    subtitle: 'Effective techniques & AI’s role in software development',
-    headerImage: '/assets/images/learn-how-to-learn-header.png',
-    secondaryImage: '/assets/images/learn-how-to-learn-secondary.png',
-    sections: [
-      {
-        title: 'Active Learning Over Passive Learning',
-        text: 'Engage by coding, taking notes, and teaching others. Use the Feynman Technique to deepen understanding.',
-      },
-      {
-        title: 'Learn by Building Real Projects',
-        items: ['GitHub', 'LeetCode', 'CodeWars'],
-      },
-      {
-        title: 'Use Spaced Repetition',
-        text: 'Revisit concepts using flashcards (Anki, Quizlet) to improve retention.',
-      },
-      {
-        title: 'Leverage Online Communities',
-        items: ['Stack Overflow', 'Reddit', 'Discord'],
-      },
-    ],
-  },
-  {
-    slug: 'fundamentals-of-technology',
-    title: 'Fundamentals Of Technology And Software Engineering',
-    subtitle: 'Core principles every software engineer should master.',
-    headerImage: '/assets/images/fundamentals-header.png',
-    secondaryImage: '/assets/images/fundamentals-secondary.png',
-    sections: [
-      {
-        title: 'Data Structures & Algorithms',
-        items: ['Arrays', 'Linked Lists', 'Sorting & Searching'],
-      },
-      {
-        title: 'System Design Basics',
-        text: 'Learn scalability, reliability, and design patterns for building robust systems.',
-      },
-      {
-        title: 'Database Fundamentals',
-        items: ['SQL vs NoSQL', 'Indexing', 'Transactions'],
-      },
-      {
-        title: 'Version Control Workflows',
-        text: 'Git branching strategies: GitFlow, Trunk-Based Development.',
-      },
-    ],
-  },
-  {
-    slug: 'learn-english-for-software',
-    title: 'Learn English For Software Engineering: Why It Matters & How To Improve',
-    subtitle: 'Master technical English communication to excel in your career.',
-    headerImage: '/assets/images/learn-english-header.png',
-    secondaryImage: '/assets/images/learn-english-secondary.png',
-    sections: [
-      {
-        title: 'Reading Technical Documentation',
-        text: 'Techniques for faster comprehension and note-taking strategies.',
-      },
-      {
-        title: 'Writing Clear Code Comments',
-        items: ['Use active voice', 'Be concise', 'Follow style guides'],
-      },
-      {
-        title: 'Effective Email Communication',
-        text: 'Structure, tone, and etiquette for professional correspondence.',
-      },
-      {
-        title: 'Speaking In Meetings',
-        items: ['Prepare key points', 'Practice pronunciation', 'Use templates'],
-      },
-    ],
-  },
-];
-
-
-
-// const tracks: Cards[] = [
+// export const pages: PageData[] = [
 //   {
-//     slug: 'uxui-design',
-//     title: 'UX/UI Design',
-//     description: 'Create stunning, user-friendly interfaces that captivate and engage. Master design thinking & wireframing.',
-//     image: '/images/tracks/uxui.jpg',
+//     slug: 'software-engineering',
+//     title: 'Software Engineering: Bridging Academia And The Job Market',
+//     subtitle: 'How to align your academic journey with industry needs and land your first role.',
+//     headerImage: '/assets/images/software-engineering-header.png',
+//     secondaryImage: '/assets/images/software-engineering-secondary.png',
+//     sections: [
+//       {
+//         title: 'Understanding the Difference Between Theory and Practice',
+//         text: 'Explore how academic lessons translate to real-world engineering challenges and best practices to bridge the gap.',
+//       },
+//       {
+//         title: 'Essential Skills Employers Look For',
+//         items: ['Version Control (Git)', 'Testing and QA', 'Continuous Integration/Deployment'],
+//       },
+//       {
+//         title: 'Building a Market-Ready Portfolio',
+//         text: 'Tips for showcasing projects that demonstrate problem-solving, code quality, and scalability.',
+//       },
+//       {
+//         title: 'Networking and Mentorship',
+//         items: ['Tech Meetups', 'Open-Source Contributions', 'Informational Interviews'],
+//       },
+//       {
+//         title: 'Interview Preparation',
+//         items: ['Data Structures & Algorithms', 'System Design', 'Behavioral Rounds'],
+//       },
+//     ],
 //   },
 //   {
-//     slug: 'react',
-//     title: 'React',
-//     description: 'Build dynamic web apps with React. Learn components, hooks, state management, and best practices.',
-//     image: '/images/tracks/react.jpg',
-//   },
-//   // ... more tracks
-// ];
-
-// export default tracks;
-
-// import { Card } from './type';
-
-// export const cards: Card[] = [
-//   {
-//     id: 'software-engineering',
-//     title: 'Software Engineering',
-//     description: 'master the essentials of software engineering and build your path to success in tech.',
-//     image: '/assets/images/software-engineering.png',
-//   },
-//   {
-//     id: 'learn-how-to-learn',
-//     title: 'Learn how to learn in the tech industry',
-//     description: 'discover effective learning strategies to excel in the tech industry and boost your career growth.',
-//     image: '/assets/images/learn-how-to-learn.png',
-//   },
-//   {
-//     id: 'tracks',
-//     title: 'Tracks',
-//     description: 'explore various tech tracks, featuring resources, videos, and expert insights to guide your career.',
-//     image: '/assets/images/tracks.png',
+//     slug: 'learn-how-to-learn',
+//     title: 'Learn How To Learn In The Tech Industry',
+//     subtitle: 'Effective techniques & AI’s role in software development',
+//     headerImage: '/assets/images/learn-how-to-learn-header.png',
+//     secondaryImage: '/assets/images/learn-how-to-learn-secondary.png',
+//     sections: [
+//       {
+//         title: 'Active Learning Over Passive Learning',
+//         text: 'Engage by coding, taking notes, and teaching others. Use the Feynman Technique to deepen understanding.',
+//       },
+//       {
+//         title: 'Learn by Building Real Projects',
+//         items: ['GitHub', 'LeetCode', 'CodeWars'],
+//       },
+//       {
+//         title: 'Use Spaced Repetition',
+//         text: 'Revisit concepts using flashcards (Anki, Quizlet) to improve retention.',
+//       },
+//       {
+//         title: 'Leverage Online Communities',
+//         items: ['Stack Overflow', 'Reddit', 'Discord'],
+//       },
+//     ],
 //   },
 //   {
-//     id: 'english-for-se',
-//     title: 'Learn english for software engineering',
-//     description: 'improve your english skills for success in software engineering.',
-//     image: '/assets/images/english-for-se.png',
+//     slug: 'fundamentals-of-technology',
+//     title: 'Fundamentals Of Technology And Software Engineering',
+//     subtitle: 'Core principles every software engineer should master.',
+//     headerImage: '/assets/images/fundamentals-header.png',
+//     secondaryImage: '/assets/images/fundamentals-secondary.png',
+//     sections: [
+//       {
+//         title: 'Data Structures & Algorithms',
+//         items: ['Arrays', 'Linked Lists', 'Sorting & Searching'],
+//       },
+//       {
+//         title: 'System Design Basics',
+//         text: 'Learn scalability, reliability, and design patterns for building robust systems.',
+//       },
+//       {
+//         title: 'Database Fundamentals',
+//         items: ['SQL vs NoSQL', 'Indexing', 'Transactions'],
+//       },
+//       {
+//         title: 'Version Control Workflows',
+//         text: 'Git branching strategies: GitFlow, Trunk-Based Development.',
+//       },
+//     ],
 //   },
 //   {
-//     id: 'fundamentals',
-//     title: 'Fundamentals',
-//     description: 'understand the core principles and concepts of technology.',
-//     image: '/assets/images/fundamentals.png',
-//   },
-//   {
-//     id: 'mentors-blog',
-//     title: 'Mentors blog',
-//     description: 'get inspired and informed through expert advice and success stories from industry mentors.',
-//     image: '/assets/images/mentors-blog.png',
+//     slug: 'learn-english-for-software',
+//     title: 'Learn English For Software Engineering: Why It Matters & How To Improve',
+//     subtitle: 'Master technical English communication to excel in your career.',
+//     headerImage: '/assets/images/learn-english-header.png',
+//     secondaryImage: '/assets/images/learn-english-secondary.png',
+//     sections: [
+//       {
+//         title: 'Reading Technical Documentation',
+//         text: 'Techniques for faster comprehension and note-taking strategies.',
+//       },
+//       {
+//         title: 'Writing Clear Code Comments',
+//         items: ['Use active voice', 'Be concise', 'Follow style guides'],
+//       },
+//       {
+//         title: 'Effective Email Communication',
+//         text: 'Structure, tone, and etiquette for professional correspondence.',
+//       },
+//       {
+//         title: 'Speaking In Meetings',
+//         items: ['Prepare key points', 'Practice pronunciation', 'Use templates'],
+//       },
+//     ],
 //   },
 // ];
 
-
-
-// import { Card as CardType } from './type'
-// const tracks: CardType[] = [
-//   {
-//     id: 'uxui-design',
-//     title: 'UX/UI Design',
-//     description: 'Create stunning, user-friendly interfaces that captivate and engage. Master design thinking & wireframing.',
-//     image: '/images/tracks/uxui.jpg',
-//   },
-//   {
-//     id: 'react',
-//     title: 'React',
-//     description: 'Build dynamic web apps with React. Learn components, hooks, state management, and best practices.',
-//     image: '/images/tracks/react.jpg',
-//   },
-//   {
-//     id: 'cloud-engineering',
-//     title: 'Cloud Engineering',
-//     description: 'Design, deploy, and manage scalable cloud architectures on AWS, Azure, or GCP.',
-//     image: '/images/tracks/cloud.jpg',
-//   },
-//   {
-//     id: 'data-science',
-//     title: 'Data Science',
-//     description: 'Analyze data, build ML models, and derive business insights with Python, R, and TensorFlow.',
-//     image: '/images/tracks/datascience.jpg',
-//   },
-//   {
-//     id: 'android-development',
-//     title: 'Android Development',
-//     description: 'Create robust Android apps using Kotlin, Jetpack Compose, and Android Studio.',
-//     image: '/images/tracks/android.jpg',
-//   },
-//   {
-//     id: 'ios-development',
-//     title: 'iOS Development',
-//     description: 'Build beautiful iOS apps with SwiftUI, UIKit, and the latest Apple frameworks.',
-//     image: '/images/tracks/ios.jpg',
-//   },
-// ]
-
-// export default tracks
-
-
-
-// import { Section } from './type';
-
-
-// export const sections: Section[] = [
-//   {
-//     title: "1. Information We Collect",
-//     description: "We may collect the following types of information:",
-//     items: [
-//       "Personal Information: Name, email address, phone number, and other contact details.",
-//       "Usage Data: Information about how you use our platform, including pages visited and time spent.",
-//       "Technical Data: IP address, browser type, device information, and cookies.",
-//     ],
-//   },
-//   {
-//     title: "2. How We Use Your Information",
-//     description: "We use your personal information to:",
-//     items: [
-//       "Provide and improve our services.",
-//       "Personalize your user experience.",
-//       "Communicate important updates, newsletters, and promotional offers.",
-//       "Analyze usage trends and improve platform performance.",
-//       "Ensure platform security and prevent unauthorized access.",
-//     ],
-//   },
-//   {
-//     title: "3. Cookies and Tracking Technologies",
-//     description: "FOMO Techno uses cookies to enhance user experience by:",
-//     items: [
-//       "Remembering user preferences.",
-//       "Collecting analytical data to improve functionality.",
-//       "Enabling targeted advertisements where applicable. You can adjust your cookie preferences through your browser settings.",
-//     ],
-//   },
-//   {
-//     title: "4. Sharing Your Information",
-//     description: "We do not sell or trade your personal information. However, we may share information with:",
-//     items: [
-//       "Service Providers: For hosting, analytics, and security services.",
-//       "Legal Authorities: When required by law or to protect our legal rights.",
-//       "Business Partners: In cases of partnerships or collaborations, with your consent.",
-//     ],
-//   },
-//   {
-//     title: "5. Data Security",
-//     description: "We implement industry-standard security measures to secure your data:",
-//     items: [
-//       "Protecting your personal information from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure.",
-//     ],
-//   },
-//   {
-//     title: "6. Your Rights",
-//     description: "You have the right to:",
-//     items: [
-//       "Access, correct, or delete your personal information.",
-//       "Withdraw consent for data processing where applicable.",
-//       "Object to the processing of your data for specific purposes.",
-//       "To exercise your rights, please contact us using the information provided below.",
-//     ],
-//   },
-//   {
-//     title: "7. Third-Party Links",
-//     description: "FOMO Techno may contain links to third-party websites. We are not responsible for the privacy practices or content of those sites.",
-
-//   },
-//   {
-//     title: "8. Children's Privacy",
-//     description: "Our platform is not intended for children under the age of 13. We do not knowingly collect personal information from minors without parental consent.",
-
-//   },
-//   {
-//     title: "9. Changes to This Policy",
-//     description: "We reserve the right to modify this Privacy Policy at any time. Changes will be effective upon posting on our website. Please review this policy periodically for updates.",
-
-//   },
-// ];
 
 
 // src/utils/data.tsx
