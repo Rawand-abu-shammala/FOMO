@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { CardType } from '../utils/type';
 import { Card as UICard } from '@/components/ui/card';
-import { Heart } from '@/components/icons/heart';
+import { Heart }  from '@/components/icons/heart';
 
 const FAV_KEY = 'favouriteTracks';
 

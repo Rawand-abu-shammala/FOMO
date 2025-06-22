@@ -38,7 +38,7 @@
 //         <div className="flex items-center space-x-2">
 //           {/* Desktop profile */}
 //           <div className="hidden md:flex items-center space-x-1 text-gray-700 hover:text-blue-600">
-//             <Link href="/profile" className="flex items-center space-x-1">
+//             <Link href="/my-profile" className="flex items-center space-x-1">
 //               <Profile className="w-5 h-5" />
 //               <span>My Profile</span>
 //             </Link>
@@ -92,7 +92,8 @@ import X from '@/components/icons/close-svgrepo-com'
 import Profile from '@/components/icons/profile-circle'
 import Logo from '@/components/icons/logo'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input' // أو استخدم <input> عادي إذا لم تملك Input من shadcn/ui
+import { Input } from '@/components/ui/input' 
+
 // import { Search } from 'lucide-react'
 // import { Search } from '@/components/icons/se'
 // import { Search } from '@/components/icons/search'
@@ -163,6 +164,7 @@ export default function Header() {
           </nav>
         </div>
 
+
         {/* MIDDLE/OPTIONAL: Search only on /track */}
         {showSearch && (
           <form
@@ -185,8 +187,9 @@ export default function Header() {
         <div className="flex items-center space-x-2">
           {/* Desktop profile */}
           <div className="hidden md:flex items-center space-x-1 text-gray-700 hover:text-blue-600">
-            <Link href="/profile" className="flex items-center space-x-1">
+            <Link href="/my-profile" className="flex items-center space-x-1">
               <Profile className="w-5 h-5" />
+              {/* <span>My Profile</span> */}
               <span>My Profile</span>
             </Link>
           </div>
