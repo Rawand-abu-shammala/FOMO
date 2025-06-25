@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
         </div>
         <div className="w-64 h-64 md:w-80 md:h-80 relative">
           <Image
-            src="/assets/images/privacy policy.png"
+            src="/assets/images/privacy-policy.svg"
             alt="Privacy Illustration"
             fill
             className="object-contain"
