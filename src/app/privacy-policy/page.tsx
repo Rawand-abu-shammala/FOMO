@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Section } from '../../utils/type';
-import { sections } from '../../utils/privacyPolicy';
+import { Section } from '../utils/type';
+import { sections } from '../utils/privacyPolicy';
 
 export default function PrivacyPolicyPage() {
   return (
