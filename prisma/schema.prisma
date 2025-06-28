@@ -1,12 +1,224 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// schema.prisma
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Users {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  password     String
+  role         String?
+  postCategory String?
+  createdAt    DateTime  @default(now())
+
+  student      Student?
+  mentor       Mentor?
+  feedback     Feedback[]
+  sections     Section[]
+}
+
+model Student {
+  id           Int            @id @default(autoincrement())
+  userId       Int            @unique
+  firstName    String
+  lastName     String
+  goal         String
+  bio          String
+  birthday     DateTime
+  major        Major
+  pronoun      Pronoun
+  profilePhoto String?
+  urlLinkedin  String?
+  isAgree      Boolean?
+
+  user         Users          @relation(fields: [userId], references: [id])
+  favouriteTracks FavouriteTrack[]
+  savedPosts   SavedPost[]
+  savedArticles SavedArticle[]
+}
+
+model Mentor {
+  id              Int       @id @default(autoincrement())
+  userId          Int       @unique
+  firstName       String
+  lastName        String
+  bio             String
+  birthday        DateTime
+  major           Major
+  pronoun         Pronoun
+  yearOfExpe      Int
+  skills          String?
+  profilPhoto     String?
+  urlLinkedin     String?
+  welcomeStatement String?
+  isAgree         Boolean?
+  expertTrackId   Int?
+
+  user            Users     @relation(fields: [userId], references: [id])
+  expertTrack     Track?    @relation(fields: [expertTrackId], references: [id])
+  posts           Post[]
+  articles        Article[]
+  resources       Resource[]
+  notes           Note[]
+}
+
+model TrackCategory {
+  id            Int     @id @default(autoincrement())
+  categoryName  String  @unique
+  tracks        Track[]
+}
+
+model Track {
+  id             Int       @id @default(autoincrement())
+  trackName      String    @unique
+  categoryId     Int
+  trackDescription String?
+  trackImage     String?
+  roadmapLink    String?
+
+  category       TrackCategory @relation(fields: [categoryId], references: [id])
+  favouriteTracks FavouriteTrack[]
+  articles       Article[]
+  resources      Resource[]
+  mentors        Mentor[]
+}
+
+model FavouriteTrack {
+  id        Int     @id @default(autoincrement())
+  idStudent Int
+  idTrack   Int
+
+  student   Student @relation(fields: [idStudent], references: [id])
+  track     Track   @relation(fields: [idTrack], references: [id])
+}
+
+model Post {
+  id            Int       @id @default(autoincrement())
+  mentorId      Int
+  postCategory  PostCategory @default(advice)
+  post          String    @db.VarChar(1000)
+  created_at    DateTime  @default(now())
+
+  mentor        Mentor    @relation(fields: [mentorId], references: [id])
+  savedPosts    SavedPost[]
+}
+
+model SavedPost {
+  id         Int     @id @default(autoincrement())
+  idStudent  Int
+  idPost     Int
+
+  student    Student @relation(fields: [idStudent], references: [id])
+  post       Post    @relation(fields: [idPost], references: [id])
+}
+
+model Article {
+  id              Int       @id @default(autoincrement())
+  mentorId        Int
+  trackId         Int
+  title           String
+  paragraphs      String?
+  image           String?
+  status          Status    @default(pending)
+  rejection_reason String?
+  views           Int       @default(0)
+  created_at      DateTime  @default(now())
+
+  mentor          Mentor    @relation(fields: [mentorId], references: [id])
+  track           Track     @relation(fields: [trackId], references: [id])
+  savedArticles   SavedArticle[]
+}
+
+model SavedArticle {
+  id         Int     @id @default(autoincrement())
+  idStudent  Int
+  idArticle  Int
+
+  student    Student @relation(fields: [idStudent], references: [id])
+  article    Article @relation(fields: [idArticle], references: [id])
+}
+
+model Resource {
+  id              Int       @id @default(autoincrement())
+  mentorId        Int
+  trackId         Int
+  title           String?
+  linkName        String?
+  link            String?
+  status          Status    @default(pending)
+  rejection_reason String?
+  created_at      DateTime  @default(now())
+
+  mentor          Mentor    @relation(fields: [mentorId], references: [id])
+  track           Track     @relation(fields: [trackId], references: [id])
+}
+
+model Feedback {
+  id         Int     @id @default(autoincrement())
+  idUser     Int
+  rating     Int?
+  comments   String?
+  created_at DateTime @default(now())
+
+  user       Users   @relation(fields: [idUser], references: [id])
+}
+
+model Note {
+  id         Int     @id @default(autoincrement())
+  sectionID  Int
+  mentorId   Int
+  note       String
+  created_at DateTime @default(now())
+
+  section    Section @relation(fields: [sectionID], references: [id])
+  mentor     Mentor  @relation(fields: [mentorId], references: [id])
+}
+
+model Section {
+  id                Int       @id @default(autoincrement())
+  userId            Int
+  name              String    @unique
+  description       String?
+  image             String[]
+  link              String?
+  linkName          String?
+  paragraphs        String[]
+  bookRecomndation  String[]
+
+  user              Users     @relation(fields: [userId], references: [id])
+  notes             Note[]
+}
+
+// ENUMS
+enum Major {
+  Software_Engineering
+  Information_Technology
+  Computer_Science
+  Computer_Engineering
+  other
+}
+
+enum Pronoun {
+  she_her
+  he_his
+}
+
+enum PostCategory {
+  advice
+  book_recommendation
+  success_story
+  mentor_journey
+  motivation
+}
+
+enum Status {
+  pending
+  approved
+  rejected
 }
