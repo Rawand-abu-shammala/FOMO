@@ -1,59 +1,63 @@
-// components/Card.tsx
-import Link from 'next/link'
-import Image from 'next/image'
-import { Card as UICard } from '@/components/ui/card'
-import { ArrowRight } from '@/components/icons'
-import { Card as CardType } from '../utils/type'
+// 'use client';
 
-export default function Card({ id, title, description, image }: CardType) {
+// import Link from 'next/link';
+// import Image from 'next/image';
+// import type { CardType } from '../utils/type';
+// import { Card as UICard } from '@/components/ui/card';
+// import { ArrowRight } from '@/components/icons';
+
+// export default function Card({ slug, title, description, image }: CardType) {
+//   return (
+//     <Link href={`/${slug}`} className="block max-w-sm m-1">
+//       <UICard className="flex flex-col h-full rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 bg-blue-50 border-none p-2">
+//         <div className="relative w-full h-32">
+//           <Image src={image} alt={title} fill className="object-cover" />
+//         </div>
+//         <div className="flex-1 flex flex-col justify-center items-center text-center p-4">
+//           <h3 className="text-base font-semibold text-gray-900 mb-1">{title}</h3>
+//           <p className="text-xs text-gray-600 mb-3">{description}</p>
+//           <button className="inline-flex items-center text-blue-600 font-medium hover:underline text-sm">
+//             <span>Explore</span>
+//             <ArrowRight className="ml-1 w-3 h-3" />
+//           </button>
+//         </div>
+//       </UICard>
+//     </Link>
+//   );
+// }
+
+
+
+
+
+
+
+// src/components/Card.tsx
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import type { CardType } from '../utils/type'; 
+import { Card as UICard } from '@/components/ui/card';
+import { ArrowRight } from '@/components/icons';
+
+export default function Card({ slug, title, description, image, href }: CardType) {
+  const linkHref = href ?? `/${slug}`;
   return (
-    <Link
-      href={`/${id}`}
-      className="block h-full max-w-sm w-full mx-auto"
-    >
-      <UICard
-        className={`
-          h-full
-          rounded-2xl
-          overflow-hidden           
-          shadow-md hover:shadow-lg
-          transition-shadow duration-300
-          flex flex-col
-          bg-blue-50                
-          border-none
-          p-0
-        `}
-      >
-        <div className="relative w-full h-48">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover block"  /* block عشان نشيل الهوامش السفلية */
-          />
+    <Link href={linkHref} className="block max-w-sm m-1">
+      <UICard className="flex flex-col h-full rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 bg-white border-none p-2">
+        <div className="relative w-full h-32">
+          <Image src={image} alt={title} fill className="object-cover" />
         </div>
-
-        {/* المحتوى */}
-        <div className="flex-1 flex flex-col justify-center items-center text-center p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
-            {title}
-          </h3>
-          <p className="text-sm text-gray-600 mb-4">
-            {description}
-          </p>
-          <button className="
-            inline-flex items-center
-            text-blue-600 font-medium
-            hover:underline
-            focus:outline-none
-          ">
-            <span>Explore Now</span>
-            <ArrowRight className="w-4 h-4 ml-1" />
+        <div className="flex-1 flex flex-col justify-center items-center text-center p-4">
+          <h3 className="text-base font-semibold text-gray-900 mb-1">{title}</h3>
+          <p className="text-xs text-gray-600 mb-3 line-clamp-2">{description}</p>
+          <button className="inline-flex items-center text-blue-600 font-medium hover:underline text-sm">
+            <span>Explore</span>
+            <ArrowRight className="ml-1 w-3 h-3" />
           </button>
         </div>
       </UICard>
     </Link>
-  )
+  );
 }
-
-
