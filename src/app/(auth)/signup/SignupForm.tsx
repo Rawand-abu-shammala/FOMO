@@ -123,8 +123,8 @@ export default function SignupForm() {
         <img
           src={
             step === 1
-              ? "/assets/images/Sign up-amico 1.png"
-              : "/assets/images/Sign up-rafiki 1.png"
+              ? "/assets/images/Sign up-amico 1.svg"
+              : "/assets/images/Sign up-rafiki 1.svg"
           }
           alt="Signup Illustration"
           className="max-w-full h-auto"
