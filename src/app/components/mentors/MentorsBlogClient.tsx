@@ -3,8 +3,8 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
-import ChevronRightIcon from "@/components/icons/arrow-right";
+// import Link from "next/link";
+// import { ArrowRight } from "@/components/icons";
 import { CategoryTabs } from "./CategoryTabs";
 import { BlogCard } from "./BlogCard";
 import { FeaturedPost } from "./FeaturedPost";
@@ -78,13 +78,13 @@ export default function MentorsBlogClient({
     <section>
       {/* ---------------------- */}
       {/* 0. Breadcrumb Navigation */}
-      <div className="text-sm text-gray-500 mb-4 flex items-center">
+      {/* <div className="text-sm text-gray-500 mb-4 flex items-center">
         <Link href="/" className="hover:underline">
           Home
         </Link>
-        <ChevronRightIcon className="w-4 h-4 mx-2 text-gray-400" />
+        <ArrowRight className="w-4 h-4 mx-2 text-gray-400" />
         <span className="text-gray-700">Mentors Blog</span>
-      </div>
+      </div> */}
 
       {/* ---------------------- */}
       {/* 1. Category Tabs */}
