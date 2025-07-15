@@ -37,7 +37,7 @@
 //         className={`${geistSans.variable} ${geistMono.variable} ${inter.className} flex flex-col min-h-screen bg-gray-50  antialiased`}
 //       >
 //         <Header />
-//         <main className="flex-grow container mx-auto px-4 py-8">
+        // <main className="flex-grow container mx-auto px-4 py-8">
 //           {children}
 //         </main>
 
@@ -87,7 +87,9 @@ export default function RootLayout({
           flex flex-col min-h-screen bg-gray-50 antialiased
         `}
       >
-        <LayoutClient>{children}</LayoutClient>
+        <LayoutClient>
+          {children}
+        </LayoutClient>
 
         <ToastContainer theme="colored" position="top-center" />
       </body>

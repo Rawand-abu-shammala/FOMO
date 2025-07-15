@@ -8,7 +8,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
   const initialPage = parseInt(searchParams.pageNumber || "1", 10);
 
   return (
-    <main>
+    <main className="flex-grow container mx-auto px-4 py-8">
       {/* Here you can add a breadcrumb or page title if you want */}
       <MentorsBlogClient
         initialCategory={initialCategory}
