@@ -1,27 +1,3 @@
-// // components/auth/Signup/RoleSelector.tsx
-// export default function RoleSelector({ value, onChange }: any) {
-//   return (
-//     <div className="flex space-x-4">
-//       {['student','mentor'].map(role => (
-//         <button
-//           key={role}
-//           type="button"
-//           onClick={() => onChange(role)}
-//           className={`flex-1 py-2 rounded-lg text-center ${
-//             value === role ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700'
-//           }`}
-//         >
-//           {role.charAt(0).toUpperCase() + role.slice(1)}
-//         </button>
-//       ))}
-//     </div>
-//   )
-// }
-
-
-
-
-
 import React from 'react';
 
 type Role = 'student' | 'mentor';
@@ -39,6 +15,8 @@ export default function RoleSelector({
 }: RoleSelectorProps) {
   const roles: Role[] = ['student', 'mentor'];
 
+
+
   return (
     <div className="flex space-x-4">
       {roles.map((role) => (
@@ -46,11 +24,15 @@ export default function RoleSelector({
           key={role}
           type="button"
           onClick={() => onChange(role)}
-          className={`flex-1 py-2 rounded-lg text-center ${
-            value === role
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-100 text-gray-700'
+    
+            className={`flex-1 py-3 rounded-lg border text-center font-medium transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      value === role
+                        ? "bg-white shadow border-blue-600"
+                        : "bg-gray-100 border-none"
           }`}
+
+
+
         >
           {role.charAt(0).toUpperCase() + role.slice(1)}
         </button>

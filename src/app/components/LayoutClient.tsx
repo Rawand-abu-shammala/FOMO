@@ -11,7 +11,8 @@ interface Props {
 export default function LayoutClient({ children }: Props) {
   const path = usePathname(); 
   //We prohibit fashion in these paths:
-  const hideOn = ["/", "/login", "/signup"];
+  // const hideOn = ["/", "/login", "/signup"];
+  const hideOn = ["/", "/login", "/signup/student", "/signup/mentor"];
   const isHidden = hideOn.includes(path);
 
   return (

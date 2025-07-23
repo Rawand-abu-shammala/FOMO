@@ -42,29 +42,44 @@ export default function StepOne({ data, onChange }: StepOneProps) {
         onChange={role => onChange('role', role)}
       />
 
-      <label className="block font-medium">First Name</label>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-        <div className="relative">
-          <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          <input
-            name="firstName"
-            placeholder="First Name"
-            value={data.firstName}
-            onChange={handleChange}
-            className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div className="relative">
-          <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          <input
-            name="lastName"
-            placeholder="Last Name"
-            value={data.lastName}
-            onChange={handleChange}
-            className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-      </div>
+  {/* First Name */}
+  <div>
+    <label htmlFor="firstName" className="block font-medium mb-4">
+      First Name
+    </label>
+    <div className="relative">
+      <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+      <input
+        id="firstName"
+        name="firstName"
+        placeholder="First Name"
+        value={data.firstName}
+        onChange={handleChange}
+        className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+  </div>
+
+  {/* Last Name */}
+  <div>
+    <label htmlFor="lastName" className="block font-medium mb-4">
+      Last Name
+    </label>
+    <div className="relative">
+      <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+      <input
+        id="lastName"
+        name="lastName"
+        placeholder="Last Name"
+        value={data.lastName}
+        onChange={handleChange}
+        className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+  </div>
+</div>
+
 
       <label className="block font-medium">Email</label>
       <div className="relative mb-4">
@@ -95,7 +110,7 @@ export default function StepOne({ data, onChange }: StepOneProps) {
           onClick={() => setShowPassword(s => !s)}
           className="absolute top-1/2 right-3 transform -translate-y-1/2"
         >
-          {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+          {showPassword ? <EyeIcon /> : <EyeOffIcon />  }
         </button>
       </div>
 
@@ -115,7 +130,7 @@ export default function StepOne({ data, onChange }: StepOneProps) {
           onClick={() => setShowConfirm(s => !s)}
           className="absolute top-1/2 right-3 transform -translate-y-1/2"
         >
-          {showConfirm ? <EyeOffIcon /> : <EyeIcon />}
+          {showConfirm ? <EyeIcon /> : <EyeOffIcon /> }
         </button>
       </div>
 
