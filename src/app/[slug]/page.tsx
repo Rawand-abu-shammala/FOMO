@@ -1,4 +1,4 @@
-// app/[slug]/page.tsx
+// src/app/[slug]/page.tsx
 
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -6,17 +6,16 @@ import { articles } from '../utils/articles';
 import { ArticleData } from '../utils/type';
 import Tab from '../components/tab';
 
-interface ArticlePageProps {
+// دالة async تأخذ فقط الـ params مباشرةً في التوقيع
+export default async function ArticlePage({
+  params: { slug },
+}: {
   params: { slug: string };
-  // Next.js App Router always passes `searchParams` even if you don't use them:
-  searchParams: Record<string, string | string[] | undefined>;
-}
+}) {
+  // نبحث عن المقالة
+  const article: ArticleData | undefined = articles.find((a) => a.slug === slug);
 
-export default function ArticlePage({ params }: ArticlePageProps) {
-  const article: ArticleData | undefined = articles.find(
-    (a) => a.slug === params.slug
-  );
-
+  // لو ما وجدنا المقالة نعرض صفحة 404
   if (!article) {
     notFound();
   }
