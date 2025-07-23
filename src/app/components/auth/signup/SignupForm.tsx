@@ -1,6 +1,7 @@
 'use client'
 // components/auth/signup/SignupForm.tsx
 import React, { useState, FormEvent } from 'react'
+import { useRouter } from "next/navigation";
 import Image from 'next/image'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -17,6 +18,8 @@ interface Props {
 export default function SignupForm({ initialRole, onSwitchRole }: Props) {
   const [step, setStep] = useState<1 | 2 | 3>(1)
   const [loading, setLoading] = useState(false)
+  const router = useRouter();
+  
 
   const [stepOneData, setStepOneData] = useState<StepOneData>({
     role: initialRole,
@@ -93,7 +96,8 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
       })
       if (step === 3) Object.entries(stepThreeData).forEach(([k, v]) => fd.append(k, String(v)))
       await fetch('/api/signup', { method: 'POST', body: fd })
-      toast.success('Signed up successfully')
+      toast.success('Signed up successfully');
+      router.push("/home");
     } catch {
       toast.error('Signup failed')
     } finally {

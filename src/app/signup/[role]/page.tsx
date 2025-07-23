@@ -7,7 +7,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import SignupForm from '../../components/auth/signup/SignupForm'
 
 export default function SignupPage() {
-  const { role: initialRole } = useParams() as { role: 'student' | 'mentor' }
+  const { role: initialRole } = useParams() as
+   { role: 'student' | 'mentor' }
   const router = useRouter()
 
   useEffect(() => {
