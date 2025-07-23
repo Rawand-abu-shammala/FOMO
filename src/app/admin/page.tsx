@@ -1,15 +1,5 @@
-import React from 'react'
+// src/app/admin/page.tsx
 
-interface Props {
-    
+export default function AdminDashboard() {
+  return <div>{/* ashboard */}</div>;
 }
-
-const AdminDashboard = (props: Props) => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
-
-export default AdminDashboard
