@@ -6,16 +6,18 @@ import { articles } from '../utils/articles';
 import { ArticleData } from '../utils/type';
 import Tab from '../components/tab';
 
-// دالة async تأخذ فقط الـ params مباشرةً في التوقيع
 export default async function ArticlePage({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  // نبحث عن المقالة
-  const article: ArticleData | undefined = articles.find((a) => a.slug === slug);
+  // فكّ الوعد للحصول على الـ slug
+  const { slug } = await params;
 
-  // لو ما وجدنا المقالة نعرض صفحة 404
+  // البحث عن المقال
+  const article: ArticleData | undefined = articles.find(
+    (a) => a.slug === slug
+  );
   if (!article) {
     notFound();
   }
@@ -27,8 +29,12 @@ export default async function ArticlePage({
       <article className="flex-grow container mx-auto px-4 py-8 max-w-4xl">
         {/* Title */}
         <header className="mb-8 text-center">
-          <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
-          <p className="text-gray-600">{article.description}</p>
+          <h1 className="text-3xl font-bold mb-4">
+            {article.title}
+          </h1>
+          <p className="text-gray-600">
+            {article.description}
+          </p>
         </header>
 
         {/* Full-width main image */}
@@ -56,8 +62,6 @@ export default async function ArticlePage({
               {sec.paragraphs.map((para, pidx) => (
                 <p key={pidx}>{para}</p>
               ))}
-
-              {/* Insert the second image after the middle section */}
               {idx === Math.floor(article.sections.length / 2) && (
                 <div className="my-6">
                   <Image
@@ -76,7 +80,9 @@ export default async function ArticlePage({
         {/* Resources */}
         {article.resources && article.resources.length > 0 && (
           <section className="mt-12 mx-auto max-w-2xl">
-            <h2 className="text-2xl font-semibold mb-4">Resources</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              Resources
+            </h2>
             <ul className="list-disc list-inside space-y-2">
               {article.resources.map((res, ridx) => (
                 <li key={ridx}>

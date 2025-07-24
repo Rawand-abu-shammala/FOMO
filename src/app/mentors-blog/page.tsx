@@ -1,15 +1,23 @@
 // src/app/mentors-blog/page.tsx
+
 import MentorsBlogClient from "../components/mentors/MentorsBlogClient";
 import { SearchParams } from "../utils/type";
 
-export default function Page({ searchParams }: { searchParams: SearchParams }) {
-  // Read variables from the URL
-  const initialCategory = searchParams.category || "All";
-  const initialPage = parseInt(searchParams.pageNumber || "1", 10);
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}) {
+  // Await the promise to get the actual searchParams
+  const { category, pageNumber } = await searchParams;
+
+  // Use default values if none are provided in the URL
+  const initialCategory = category || "All";
+  const initialPage = parseInt(pageNumber || "1", 10);
 
   return (
     <main className="flex-grow container mx-auto px-4 py-8">
-      {/* Here you can add a breadcrumb or page title if you want */}
+      {/* You can add a breadcrumb or page title here */}
       <MentorsBlogClient
         initialCategory={initialCategory}
         initialPage={initialPage}
@@ -17,3 +25,4 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
     </main>
   );
 }
+

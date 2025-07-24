@@ -18,7 +18,7 @@ const SvgHeart = ({ filled = false, className, ...svgProps }: HeartProps) => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
-    {...svgProps}        // now only valid SVGProps get spread
+    {...svgProps}
   >
     {filled ? (
       <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
@@ -37,4 +37,9 @@ const SvgHeart = ({ filled = false, className, ...svgProps }: HeartProps) => (
   </svg>
 );
 
-export const Heart = memo(SvgHeart);
+// Export both default and named for flexibility
+const Heart = memo(SvgHeart);
+export default Heart;
+export { Heart };
+
+
