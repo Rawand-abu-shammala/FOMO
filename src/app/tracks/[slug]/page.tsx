@@ -14,17 +14,16 @@ export default async function TrackDetailPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // نظرة: params هي Promise، لذلك نستخدم await
   const { slug } = await params;
 
   const track = tracks.find((t) => t.slug === slug);
   if (!track) notFound();
 
   return (
-    <article className="max-w-4xl mx-auto py-12 px-4">
-      {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="text-sm mb-6">
-        <Link href="/" className="text-gray-600 hover:text-gray-900">
+    <>
+      <div className="container mx-auto px-4 py-8 text-sm text-gray-500 mb-4 flex items-center pl-6">
+
+        <Link href="/home" className="text-gray-600 hover:text-gray-900">
           Home
         </Link>
         <span className="mx-2 text-gray-400">/</span>
@@ -33,13 +32,16 @@ export default async function TrackDetailPage({
         </Link>
         <span className="mx-2 text-gray-400">/</span>
         <span className="text-gray-900 font-medium">{track.title}</span>
-      </nav>
+      </div>
 
+    <article className="max-w-4xl mx-auto py-12 px-4">
+      {/* Breadcrumb */}
+     
       {/* Title */}
-      <header className="mb-8 text-center">
+      <section className="mb-8 text-center">
         <h1 className="text-3xl font-bold mb-2">{track.title}</h1>
         <p className="text-gray-600">{track.description}</p>
-      </header>
+      </section>
 
       {/* Image */}
       <div className="w-full mb-8">
@@ -75,6 +77,7 @@ export default async function TrackDetailPage({
         </p>
       </section>
     </article>
+    </>
   );
 }
 

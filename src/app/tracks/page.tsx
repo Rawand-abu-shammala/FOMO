@@ -19,7 +19,7 @@ export default function TrackPage() {
       {/* Breadcrumb */}
       <Tab article={{ title: "Tracks" }} />
 
-      <main className="flex flex-col min-h-screen">
+      <main className="flex flex-col min-h-screen container mx-auto px-4 py-8">
         {/* Banner */}
         <section className="w-full">
           <div className="w-full overflow-hidden">
