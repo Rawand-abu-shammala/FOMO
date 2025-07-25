@@ -13,8 +13,8 @@ export default function Tab({ title, article }: TabProps) {
   const displayTitle = title ?? article?.title ?? '';
 
   return (
-       <div className="container mx-auto px-4 py-8 text-sm text-gray-500 mb-4 flex items-center pl-6">
-      <Link href="/" className="hover:underline">
+      <div className="container mx-auto px-4 py-8 text-sm text-gray-500 mb-4 flex items-center pl-6">
+      <Link href="/home" className="hover:underline">
         Home
       </Link>
       <ArrowRight className="w-4 h-4 mx-2 text-gray-400" />

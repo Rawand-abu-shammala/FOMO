@@ -124,6 +124,120 @@ export const articles: ArticleData[] = [
       { title: 'Pomodoro Technique', url: 'https://francescocirillo.com/pages/pomodoro-technique' },
     ]
   },
+
+   {
+    slug: 'tracks',
+    title: 'Tracks',
+    description: 'Explore various tech tracks, resources, and how to choose the right path for you.',
+    image: '/assets/images/tracks.svg',
+    intro: `In this article, we will review the main tracks in tech and how to choose the most suitable path for you based on your interests, goals, and current experience level.`,
+    secondImage: '/assets/images/tracks-2.svg',
+    sections: [
+      {
+        title: '1. Why Choose a Specific Track?',
+        paragraphs: [
+          `Choosing a clear track helps you focus your efforts and build specialized skills.`,
+          `However, don’t lock yourself into a single track completely: start with a broad understanding and then specialize.`
+        ]
+      },
+      {
+        title: '2. Common Tracks',
+        paragraphs: [
+          `- Frontend Development: learn HTML/CSS/JS and frameworks like React/Vue.`,
+          `- Backend Development: learn Node.js, Python, or Java, databases, and API design.`,
+          `- Full-stack: combines both frontend and backend, suitable for those who enjoy both.`,
+          `- DevOps/SRE: learn CI/CD, Docker, Kubernetes, and cloud infrastructure management.`,
+          `- Data Science/ML: statistics, Python, libraries like Pandas and Scikit-learn, machine learning and modeling.`
+        ]
+      },
+      {
+        title: '3. How to Decide',
+        paragraphs: [
+          `- Evaluate your interests: Do you enjoy UI design or working with data?`,
+          `- Try small projects in each area: build a simple web page, a small API, and a data-centric project.`,
+          `- Read job requirements: understand how the local/global market demands your potential skills.`
+        ]
+      },
+      {
+        title: '4. Building a Learning Roadmap for Each Track',
+        paragraphs: [
+          `- Gather resources for beginner, intermediate, and advanced levels for each technology in the track.`,
+          `- Define small practical projects to gain tangible experience.`,
+          `- Connect with professionals in the track and seek their advice.`
+        ]
+      },
+      {
+        title: '5. Evolving Over Time',
+        paragraphs: [
+          `- Tracks change: new technologies emerge, so be prepared to keep learning.`,
+          `- Don’t be afraid to switch tracks later if you discover a new passion or better opportunity.`
+        ]
+      }
+    ],
+    resources: [
+      { title: 'Roadmap.sh', url: 'https://roadmap.sh/' },
+      { title: 'Frontend Roadmap', url: 'https://roadmap.sh/frontend' },
+      { title: 'Backend Roadmap', url: 'https://roadmap.sh/backend' },
+      { title: 'DevOps Roadmap', url: 'https://roadmap.sh/devops' },
+      { title: 'Data Science Roadmap', url: 'https://roadmap.sh/data-science' },
+    ]
+  },
+
+
+  {
+    slug: 'learn-english-for-software',
+    title: 'Learn English For Software Engineering',
+    description: 'Strategies and resources to improve your English as a software developer.',
+    image: '/assets/images/learn-english.svg',
+    intro: `Mastering English is important for developers: from reading documentation to communicating with global teams. We will see why and how to gradually develop your skills.`,
+    secondImage: '/assets/images/learn-english-2.svg',
+    sections: [
+      {
+        title: '1. Importance of English for Developers',
+        paragraphs: [
+          `Most documentation, code, and tools are in English.`,
+          `Communication in tech communities and job interviews.`
+        ]
+      },
+      {
+        title: '2. Improving Technical Reading',
+        paragraphs: [
+          `Read documentation and code examples regularly, and use translation tools for unfamiliar terms.`
+        ]
+      },
+      {
+        title: '3. Improving Writing',
+        paragraphs: [
+          `Write summaries or technical blog posts.`,
+          `Contribute to project documentation and request peer reviews.`
+        ]
+      },
+      {
+        title: '4. Improving Listening and Speaking',
+        paragraphs: [
+          `Listen to tech podcasts in English.`,
+          `Participate in virtual meetings or language exchange apps for conversation practice.`
+        ]
+      },
+      {
+        title: '5. Tools and Resources',
+        paragraphs: [
+          `Coursera and Udemy for technical English courses,`,
+          `Grammarly for writing checks, technical vocabulary lists on Quizlet/Memrise.`
+        ]
+      }
+    ],
+    resources: [
+      { title: 'Stack Overflow', url: 'https://stackoverflow.com/' },
+      { title: 'GitHub Docs', url: 'https://docs.github.com/' },
+      { title: 'Grammarly', url: 'https://www.grammarly.com/' },
+      { title: 'TED Talks Technology', url: 'https://www.ted.com/topics/technology' },
+    ]
+  },
+
+
+
+
   {
     slug: 'fundamentals-of-technology',
     title: 'Fundamentals',
@@ -181,113 +295,8 @@ export const articles: ArticleData[] = [
       { title: 'OWASP Top Ten', url: 'https://owasp.org/www-project-top-ten/' },
     ]
   },
-  {
-    slug: 'learn-english-for-software',
-    title: 'Learn English For Software Engineering',
-    description: 'Strategies and resources to improve your English as a software developer.',
-    image: '/assets/images/learn-english.svg',
-    intro: `Mastering English is important for developers: from reading documentation to communicating with global teams. We will see why and how to gradually develop your skills.`,
-    secondImage: '/assets/images/learn-english-2.svg',
-    sections: [
-      {
-        title: '1. Importance of English for Developers',
-        paragraphs: [
-          `Most documentation, code, and tools are in English.`,
-          `Communication in tech communities and job interviews.`
-        ]
-      },
-      {
-        title: '2. Improving Technical Reading',
-        paragraphs: [
-          `Read documentation and code examples regularly, and use translation tools for unfamiliar terms.`
-        ]
-      },
-      {
-        title: '3. Improving Writing',
-        paragraphs: [
-          `Write summaries or technical blog posts.`,
-          `Contribute to project documentation and request peer reviews.`
-        ]
-      },
-      {
-        title: '4. Improving Listening and Speaking',
-        paragraphs: [
-          `Listen to tech podcasts in English.`,
-          `Participate in virtual meetings or language exchange apps for conversation practice.`
-        ]
-      },
-      {
-        title: '5. Tools and Resources',
-        paragraphs: [
-          `Coursera and Udemy for technical English courses,`,
-          `Grammarly for writing checks, technical vocabulary lists on Quizlet/Memrise.`
-        ]
-      }
-    ],
-    resources: [
-      { title: 'Stack Overflow', url: 'https://stackoverflow.com/' },
-      { title: 'GitHub Docs', url: 'https://docs.github.com/' },
-      { title: 'Grammarly', url: 'https://www.grammarly.com/' },
-      { title: 'TED Talks Technology', url: 'https://www.ted.com/topics/technology' },
-    ]
-  },
-  {
-    slug: 'tracks',
-    title: 'Tracks',
-    description: 'Explore various tech tracks, resources, and how to choose the right path for you.',
-    image: '/assets/images/tracks.svg',
-    intro: `In this article, we will review the main tracks in tech and how to choose the most suitable path for you based on your interests, goals, and current experience level.`,
-    secondImage: '/assets/images/tracks-2.svg',
-    sections: [
-      {
-        title: '1. Why Choose a Specific Track?',
-        paragraphs: [
-          `Choosing a clear track helps you focus your efforts and build specialized skills.`,
-          `However, don’t lock yourself into a single track completely: start with a broad understanding and then specialize.`
-        ]
-      },
-      {
-        title: '2. Common Tracks',
-        paragraphs: [
-          `- Frontend Development: learn HTML/CSS/JS and frameworks like React/Vue.`,
-          `- Backend Development: learn Node.js, Python, or Java, databases, and API design.`,
-          `- Full-stack: combines both frontend and backend, suitable for those who enjoy both.`,
-          `- DevOps/SRE: learn CI/CD, Docker, Kubernetes, and cloud infrastructure management.`,
-          `- Data Science/ML: statistics, Python, libraries like Pandas and Scikit-learn, machine learning and modeling.`
-        ]
-      },
-      {
-        title: '3. How to Decide',
-        paragraphs: [
-          `- Evaluate your interests: Do you enjoy UI design or working with data?`,
-          `- Try small projects in each area: build a simple web page, a small API, and a data-centric project.`,
-          `- Read job requirements: understand how the local/global market demands your potential skills.`
-        ]
-      },
-      {
-        title: '4. Building a Learning Roadmap for Each Track',
-        paragraphs: [
-          `- Gather resources for beginner, intermediate, and advanced levels for each technology in the track.`,
-          `- Define small practical projects to gain tangible experience.`,
-          `- Connect with professionals in the track and seek their advice.`
-        ]
-      },
-      {
-        title: '5. Evolving Over Time',
-        paragraphs: [
-          `- Tracks change: new technologies emerge, so be prepared to keep learning.`,
-          `- Don’t be afraid to switch tracks later if you discover a new passion or better opportunity.`
-        ]
-      }
-    ],
-    resources: [
-      { title: 'Roadmap.sh', url: 'https://roadmap.sh/' },
-      { title: 'Frontend Roadmap', url: 'https://roadmap.sh/frontend' },
-      { title: 'Backend Roadmap', url: 'https://roadmap.sh/backend' },
-      { title: 'DevOps Roadmap', url: 'https://roadmap.sh/devops' },
-      { title: 'Data Science Roadmap', url: 'https://roadmap.sh/data-science' },
-    ]
-  },
+  
+ 
   {
     slug: 'mentors-blog',
     title: 'Mentors Blog',

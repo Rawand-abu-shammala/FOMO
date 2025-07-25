@@ -149,6 +149,7 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
             <p className="text-gray-600 text-center">
               Join us today and unlock access to exclusive features. Sign up in just a few steps!
             </p>
+            <h2 className='text-xl'>I Went To</h2>
             <StepOneForm data={stepOneData} onChange={handleStepOneChange} />
             <button className="w-full py-3 bg-blue-600 text-white rounded-lg">
               Next

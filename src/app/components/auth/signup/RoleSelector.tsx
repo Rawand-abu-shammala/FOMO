@@ -3,9 +3,7 @@ import React from 'react';
 type Role = 'student' | 'mentor';
 
 interface RoleSelectorProps {
-  /** القيمة المحددة حالياً */
   value: Role;
-  /** دالة تُستدعى عند تغيير الدور */
   onChange: (role: Role) => void;
 }
 

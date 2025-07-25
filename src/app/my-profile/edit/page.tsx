@@ -55,15 +55,18 @@ export default function EditProfilePage() {
 
   return (
     <>
-    <div className="text-sm text-gray-500 mb-4 flex items-center pl-6">
+    <div className="container mx-auto px-4 py-8 text-sm text-gray-500 mb-4 flex items-center pl-6">
+
         <Link href="/my-profile" className="hover:underline">
           My Profile
         </Link>
         <ArrowRight className="w-4 h-4 mx-2 text-gray-400" />
         <span className="text-gray-700">Edit</span>
     </div>
+    <div className="text-sm text-gray-500 mb-4 flex items-center pl-6">
     
     <div className="max-w-5xl ml-0 py-10 px-4 sm:px-6 lg:px-8">
+ 
 
       <div className="flex flex-col md:flex-row items-stretch divide-y md:divide-y-0 md:divide-x divide-gray-200 gap-8">
         {/* Avatar Column */}
@@ -229,6 +232,8 @@ export default function EditProfilePage() {
         </form>
       </div>
     </div>
+    </div>
     </>
+
   );
 }
