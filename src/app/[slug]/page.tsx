@@ -11,10 +11,8 @@ export default async function ArticlePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // فكّ الوعد للحصول على الـ slug
   const { slug } = await params;
 
-  // البحث عن المقال
   const article: ArticleData | undefined = articles.find(
     (a) => a.slug === slug
   );
