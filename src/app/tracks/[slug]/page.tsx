@@ -85,7 +85,7 @@ export default async function TrackDetailPage({
           </p>
         </section>
       </article>
-
+      <h2>All Article</h2>
       {/* All Articles — only on the UX/UI Design page */}
       {track.slug === 'ux-ui-design' && <AllArticles />}
     </>
