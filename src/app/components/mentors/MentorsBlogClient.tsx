@@ -105,6 +105,7 @@ export default function MentorsBlogClient({
           title={featuredPost.title}
           excerpt={featuredPost.excerpt}
           id={featuredPost.id}
+          filled={false} 
         />
       )}
 

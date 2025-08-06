@@ -16,9 +16,7 @@ export interface CardType {
 
 export interface ArticleSection {
   title: string;
-  paragraphs: string[]; // كل فقرة كنص مستقل
-  // لو حابب تضيف صورة خاصة بكل قسم، ممكن تضيف حقل image?: string
-  // لكن هنا سنستخدم صورة ثانية عامة للمقال
+  paragraphs: string[]; 
 }
 
 export interface Resource {
@@ -244,6 +242,7 @@ export interface FeaturedPostProps {
   title: string;
   excerpt: string;
   id: string;
+  filled: boolean;
 }
 
 // Props for MentorsBlogClient component
@@ -305,14 +304,14 @@ export interface BlogPost {
 }
 
 // Props for the FeaturedPost component
-export interface FeaturedPostProps {
-  authorName: string;
-  authorRole: string;
-  authorAvatarUrl: string;
-  title: string;
-  excerpt: string;
-  id: string;
-}
+// export interface FeaturedPostProps {
+//   authorName: string;
+//   authorRole: string;
+//   authorAvatarUrl: string;
+//   title: string;
+//   excerpt: string;
+//   id: string;
+// }
 
 // Props passed into the MentorsBlogClient component
 export interface MentorsBlogClientProps {
@@ -338,14 +337,14 @@ export interface BlogPost {
 
 
 // Props passed into the FeaturedPost component
-export interface FeaturedPostProps {
-  authorName: string;
-  authorRole: string;
-  authorAvatarUrl: string;
-  title: string;
-  excerpt: string;
-  id: string;
-}
+// export interface FeaturedPostProps {
+//   authorName: string;
+//   authorRole: string;
+//   authorAvatarUrl: string;
+//   title: string;
+//   excerpt: string;
+//   id: string;
+// }
 
 // Props passed into the BlogCard component
 export interface BlogCardProps {

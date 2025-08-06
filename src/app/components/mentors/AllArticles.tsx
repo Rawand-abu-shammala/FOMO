@@ -19,6 +19,7 @@ export function AllArticles() {
             authorAvatarUrl={post.authorAvatarUrl}
             title={post.title}
             excerpt={post.excerpt}
+            filled={false} 
           />
         ))}
       </div>
