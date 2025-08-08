@@ -1,5 +1,5 @@
 'use client'
-// app/signup/[role]/page.tsx
+
 import React, { useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { ToastContainer } from 'react-toastify'
@@ -8,7 +8,7 @@ import SignupForm from '../../components/auth/signup/SignupForm'
 
 export default function SignupPage() {
   const { role: initialRole } = useParams() as
-   { role: 'student' | 'mentor' }
+    { role: 'student' | 'mentor' }
   const router = useRouter()
 
   useEffect(() => {

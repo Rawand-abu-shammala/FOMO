@@ -1,18 +1,35 @@
-export interface Card {
-  slug: string;
-  title: string;
-  description: string;
-  image: string;
-}
+// export type Role = 'student' | 'mentor'
+// // utils/type.ts
+// export interface CardType {
+//   slug: string;
+//   title: string;
+//   description: string;
+//   image: string;
+//   href?: string;
+// }
 
 // utils/type.ts
+export type Role = 'student' | 'mentor';
+
 export interface CardType {
   slug: string;
   title: string;
   description: string;
   image: string;
   href?: string;
+  allowedRoles?: Role[]; 
 }
+
+
+export interface Card {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+  allowedRoles?: Role[]
+}
+
+
 
 export interface ArticleSection {
   title: string;

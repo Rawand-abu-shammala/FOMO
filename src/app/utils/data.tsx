@@ -1,6 +1,10 @@
-import { Card } from './type';
+// utils/data.ts
+import type { CardType, Role } from './type';
 
-export const cards: Card[] = [
+/**
+ * Student cards (6)
+ */
+export const studentCards: CardType[] = [
   {
     slug: 'software-engineering',
     title: 'Software Engineering',
@@ -20,7 +24,6 @@ export const cards: Card[] = [
     image: '/assets/images/tracks.svg',
   },
   {
-    // slug: 'english-for-se',
     slug: 'learn-english-for-software',
     title: 'Learn English for Software Engineering',
     description: 'Improve your English skills for success in software engineering.',
@@ -41,7 +44,48 @@ export const cards: Card[] = [
 ];
 
 
+export const mentorCards: CardType[] = [
+  {
+    slug: 'software-engineering',
+    title: 'Software Engineering',
+    description: 'Master the essentials of software engineering and build your path to success in tech.',
+    image: '/assets/images/software-engineering.svg',
+  },
+  {
+    slug: 'learn-how-to-learn',
+    title: 'Learn how to learn in the tech industry',
+    description: 'Discover effective learning strategies to excel in the tech industry and boost your career growth.',
+    image: '/assets/images/learn-how-to-learn.svg',
+  },
+  {
+    slug: 'tracks',
+    title: 'Tracks',
+    description: 'Explore various tech tracks, featuring resources, videos, and expert insights to guide your career.',
+    image: '/assets/images/tracks.svg',
+  },
+  {
+    slug: 'learn-english-for-software',
+    title: 'Learn English for Software Engineering',
+    description: 'Improve your English skills for success in software engineering.',
+    image: '/assets/images/learn-english.svg',
+  },
 
+  {
+    slug: 'mentors-blog',
+    title: 'Mentors Blog',
+    description: 'Get inspired and informed through expert advice and success stories from industry mentors.',
+    image: '/assets/images/mentors-blog.svg',
+  },
+];
+
+/**
+ * Helper: return cards for a role
+ */
+export function getCardsForRole(role?: Role): CardType[] {
+  if (role === 'mentor') return mentorCards;
+  // default / 'student'
+  return studentCards;
+}
 
 // src/utils/data.tsx
 import { BlogPost } from "./type";

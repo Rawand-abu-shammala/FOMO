@@ -1,5 +1,6 @@
 'use client'
-// components/auth/signup/SignupForm.tsx
+// app/components/auth/signup/SignupForm.tsx
+
 import React, { useState, FormEvent } from 'react'
 import { useRouter } from "next/navigation";
 import Image from 'next/image'
@@ -42,7 +43,7 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
     specialties: '',
   })
 
-    const [stepThreeData, setStepThreeData] = useState<StepThreeData>({
+  const [stepThreeData, setStepThreeData] = useState<StepThreeData>({
     tracks: '',
     skills: '',
     welcome: '',
@@ -95,10 +96,19 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
         else fd.append(k, String(v))
       })
       if (step === 3) Object.entries(stepThreeData).forEach(([k, v]) => fd.append(k, String(v)))
+
+      // call your API (if any)
       await fetch('/api/signup', { method: 'POST', body: fd })
       toast.success('Signed up successfully');
-      router.push("/home");
-    } catch {
+
+      // --- important: set role cookie then redirect to /home/{role}
+      const roleToUse = stepOneData.role || initialRole || 'student'
+      // set cookie for 30 days (client-side)
+      document.cookie = `userRole=${roleToUse}; path=/; max-age=${60 * 60 * 24 * 30}`
+
+      router.push(`/home/${roleToUse}`)
+    } catch (err) {
+      console.error(err)
       toast.error('Signup failed')
     } finally {
       setLoading(false)
@@ -112,6 +122,8 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
   ) => {
     if (field === 'role') {
       onSwitchRole(value as 'student' | 'mentor')
+      // update the local copy of stepOneData.role as well
+      setStepOneData(p => ({ ...p, role: value as 'student' | 'mentor' }))
       return
     }
     if (field.startsWith('dob.')) {
@@ -186,8 +198,4 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
     </div>
   )
 }
-
-
-
-
 
