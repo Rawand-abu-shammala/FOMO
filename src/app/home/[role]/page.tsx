@@ -5,11 +5,18 @@ import { getCardsForRole } from '../../utils/data'
 import type { Role, CardType } from '../../utils/type'
 import { notFound } from 'next/navigation'
 
-export default function HomeByRole({ params }: { params: { role: Role } }) {
-  const { role } = params
+// Next.js 15: params is a Promise, so type it and await it inside the component
+type PageProps = {
+  params: Promise<{ role: string }>
+}
 
-  if (role !== 'student' && role !== 'mentor') return notFound()
+export default async function HomeByRole({ params }: PageProps) {
+  const { role: rawRole } = await params
 
+  // validate role
+  if (rawRole !== 'student' && rawRole !== 'mentor') return notFound()
+
+  const role = rawRole as Role
   const cards: CardType[] = getCardsForRole(role)
 
   return (
@@ -30,3 +37,5 @@ export default function HomeByRole({ params }: { params: { role: Role } }) {
     </>
   )
 }
+
+

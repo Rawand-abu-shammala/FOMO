@@ -5,6 +5,8 @@ import { getCardsForRole } from '../utils/data'
 import type { CardType } from '../utils/type'
 import { getUserRoleFromCookie } from '@/lib/session'
 
+export const dynamic = 'force-dynamic'
+
 export default async function HomePage() {
   const role = await getUserRoleFromCookie() // 'student' | 'mentor' | null
 
@@ -28,5 +30,4 @@ export default async function HomePage() {
     </>
   )
 }
-
 
