@@ -48,7 +48,8 @@ export default function Features() {
             <h4 className="font-semibold mb-2 text-base text-gray-800 leading-tight">
               {title}
             </h4>
-            <p className="text-sm text-gray-600">{desc}</p>
+            <p className="text-sm text-center text-gray-600">{desc}</p>
+
           </div>
         ))}
       </div>

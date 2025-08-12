@@ -144,7 +144,7 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
               ? '/assets/images/Sign up-amico 1.svg'
               : step === 2
               ? '/assets/images/Sign up-rafiki 1.svg'
-              : '/assets/images/Sign up-third-step.svg'
+              : '/assets/images/Sign up-rafiki 1.svg'
           }
           alt="Signup Illustration"
           width={500}
