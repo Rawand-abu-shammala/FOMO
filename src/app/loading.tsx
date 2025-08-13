@@ -1,5 +1,4 @@
 // app/loading.tsx
-
 const Loading = () => {
   return (
     <section className="min-h-screen p-5 flex items-center justify-center bg-gray-50">
