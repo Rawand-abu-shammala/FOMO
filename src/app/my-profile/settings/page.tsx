@@ -9,10 +9,10 @@ export default function SettingsPage() {
   const router = useRouter();
  // start data; In its production it is brought from API
   const userInfo = {
-    name: "Sarah Johnson",
+    name: "Rawand Abu Shammala",
     role: "Student",
-    birthday: "March 15, 1995",
-    email: "sarah.johnson@example.com",
+    birthday: "May 02, 2002",
+    email: "rawand.johnson@example.com",
   };
 
   const handleLogout = () => {
@@ -33,7 +33,9 @@ export default function SettingsPage() {
 
   return (
 <>
-     <div className="text-sm text-gray-500 flex items-center mb-6 pl-6">
+      <div className="container mx-auto px-4 py-8 text-sm text-gray-500 mb-4 flex items-center pl-6">
+
+     {/* <div className="text-sm text-gray-500 flex items-center mb-6 pl-6"> */}
           <Link href="/my-profile" className="hover:underline">
             My Profile
           </Link>
@@ -46,8 +48,9 @@ export default function SettingsPage() {
       <div className="w-full py-10 pl-6">
 
        
-        
-        <div className="space-y-5 text-gray-700">
+      <div className="container mx-auto px-4 text-sm text-gray-500 mb-4 space-y-5 text-gray-700">
+
+        {/* <div className="space-y-5 text-gray-700"> */}
           <div className="flex items-center">
             <span className="font-medium text-gray-900">Name</span>
             <span className="ml-2">{userInfo.name}</span>
@@ -66,17 +69,20 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        <div className="mt-10 flex space-x-4">
+        {/* <div className="container mx-auto px-4 py-8 text-sm text-gray-500 mb-4 flex items-center pl-6"> */}
+
+
+        <div className="container mx-auto mt-10 flex space-x-4 pl-3">
           <Button
             onClick={handleLogout}
-            className="w-48 py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white"
+            className="w-36 py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
           >
             Log Out
           </Button>
           <Button
             variant="outline"
             onClick={handleDeleteAccount}
-            className="w-48 py-3 rounded-md border-red-500 text-red-500 hover:bg-red-50"
+            className="w-36 py-3 rounded-md border-red-500 text-red-500 hover:bg-red-50 cursor-pointer"
           >
             delete account
           </Button>

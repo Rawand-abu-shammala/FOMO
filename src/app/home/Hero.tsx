@@ -29,8 +29,7 @@ export default function Hero({ role }: { role?: Role }) {
         <p className="text-gray-700 mb-6">
           {subtitle}
         </p>
-        <Button asChild className="bg-blue-600 text-white" size="lg">
-          {/* If your Button supports asChild (shadcn), otherwise use <a> or Link */}
+        <Button asChild className="bg-blue-600 text-white cursor-pointer" size="lg">
           <a href={ctaHref}>{ctaLabel}</a>
         </Button>
       </div>
@@ -41,6 +40,7 @@ export default function Hero({ role }: { role?: Role }) {
           width={600}
           height={400}
           className="rounded-lg object-cover"
+          priority
         />
       </div>
     </section>

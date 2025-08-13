@@ -53,7 +53,7 @@ export default function TrackCard({
             <button
               onClick={toggleFavorite}
               aria-label={favorited ? 'Unfavorite' : 'Favorite'}
-              className="p-1 rounded-full bg-white hover:bg-gray-100 transition"
+              className="p-1 rounded-full bg-white hover:bg-gray-100 transition cursor-pointer"
             >
               <Heart
                 filled={favorited}

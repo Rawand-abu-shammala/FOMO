@@ -42,7 +42,7 @@ export function FeaturedPost({
         size="icon"
         onClick={handleSave}
         aria-label={saved ? "Unsave excerpt" : "Save excerpt"}
-        className="absolute top-4 right-4 p-0 focus:ring-0"
+        className="absolute top-4 right-4 p-0 focus:ring-0 cursor-pointer"
       >
         <SaveIcon
           filled={saved}

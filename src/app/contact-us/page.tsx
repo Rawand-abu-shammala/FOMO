@@ -26,7 +26,7 @@ export default function ContactPage() {
     <div className="container mx-auto flex-grow flex flex-col md:flex-row items-start gap-8px-4 py-8 sm:p-6">
       {/* Form Section */}
       <div className="flex-1 w-full max-w-lg">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">Contact Us</h2>
+        <h2 className="mt-6 text-2xl md:text-3xl font-semibold mb-4">Contact Us</h2>
         <p className="text-gray-600 mb-6 text-sm md:text-base">
           A clean and modern interface for seamless communication, reflecting professionalism and accessibility.
         </p>
@@ -87,7 +87,7 @@ export default function ContactPage() {
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-3 transition-colors"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-3 transition-colors cursor-pointer"
           >
             Send
           </Button>

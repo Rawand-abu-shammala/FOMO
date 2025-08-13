@@ -44,7 +44,7 @@ export default function FavouriteCard({
       <button
         onClick={() => onRemove(slug)}
         aria-label="Remove from favourites"
-        className="p-2 rounded-full text-gray-400 hover:text-red-500 transition"
+        className="p-2 rounded-full text-gray-400 hover:text-red-500 transition cursor-pointer"
       >
         <Bag className="w-5 h-5" />
       </button>

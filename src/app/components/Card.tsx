@@ -18,7 +18,7 @@ export default function Card({ slug, title, description, image, href }: CardType
         <div className="flex-1 flex flex-col justify-center items-center text-center p-4">
           <h3 className="text-base font-semibold text-gray-900 mb-1">{title}</h3>
           <p className="text-xs text-gray-600 mb-3 line-clamp-2">{description}</p>
-          <button className="inline-flex items-center text-blue-600 font-medium hover:underline text-sm">
+          <button className="inline-flex items-center text-blue-600 font-medium hover:underline text-sm cursor-pointer">
             <span>Explore</span>
             <ArrowRight className="ml-1 w-3 h-3" />
           </button>

@@ -23,7 +23,7 @@ export default function RoleSelector({
           type="button"
           onClick={() => onChange(role)}
     
-            className={`flex-1 py-3 rounded-lg border text-center font-medium transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            className={`flex-1 py-3 rounded-lg border text-center font-medium transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer${
                       value === role
                         ? "bg-white shadow border-blue-600"
                         : "bg-gray-100 border-none"

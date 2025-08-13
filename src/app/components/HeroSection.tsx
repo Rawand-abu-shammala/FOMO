@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="flex justify-center">
           <Button
             size="lg"
-            className="w-full sm:w-1/2 md:w-auto bg-blue-600 hover:bg-blue-700 text-white rounded-full"
+            className="w-full sm:w-1/2 md:w-auto bg-blue-600 hover:bg-blue-700 text-white rounded-full cursor-pointer"
           >
             <Link href="/signup">Join Now for Free</Link>
           </Button>

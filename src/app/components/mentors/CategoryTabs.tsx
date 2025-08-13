@@ -20,7 +20,7 @@ export function CategoryTabs({ value, onChange }: CategoryTabsProps) {
             <li key={cat}>
               <button
                 onClick={() => onChange(cat)}
-                className={`relative text-sm font-medium ${
+                className={`relative text-sm font-medium cursor-pointer${
                   isActive
                     ? "text-blue-600"
                     : "text-gray-600 hover:text-gray-800"

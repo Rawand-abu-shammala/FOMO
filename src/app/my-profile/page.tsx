@@ -7,7 +7,7 @@ import SettingsIcon from "@/components/icons/setting";
 export default function ProfilePage() {
 // User data
   const user = {
-    name: "Sarah Johnson",
+    name: "Rawand Abu Shammala",
     major: "Software Engineering",
     goals: "To develop innovative AI-powered applications that enhance user experiences.",
     bio: `Passionate software engineer with a strong background in full-stack development and AI-driven solutions. She enjoys building scalable and user-friendly applications that integrate cutting-edge AI technologies to enhance digital experiences. With expertise in JavaScript, Python, and cloud computing, she constantly explores new ways to optimize software performance and usability. Always eager to learn, innovate, and contribute, Sarah actively participates in tech communities, hackathons, and open-source projects to stay ahead in the ever-evolving world of technology.`,

@@ -81,12 +81,12 @@ export default async function MentorProfile({
 
           {/* Action Buttons using shadcn/ui */}
           <div className="flex flex-wrap gap-4 pt-4">
-            <Button className="w-48 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            <Button className="w-48 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition cursor-pointer">
               Book session
             </Button>
             <Button
               variant="outline"
-              className="w-48 px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition"
+              className="w-48 px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition cursor-pointer"
               asChild
             >
               <a href={mentor.linkedin} target="_blank" rel="noopener noreferrer">

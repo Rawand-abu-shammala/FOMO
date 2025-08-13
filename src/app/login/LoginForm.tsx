@@ -111,7 +111,7 @@ export default function LoginForm() {
         <button
           type="button"
           onClick={() => setShowPassword((s) => !s)}
-          className="absolute top-1/2 right-3 transform -translate-y-1/2"
+          className="absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer"
         >
           {showPassword ? <EyeOffIcon /> : <EyeIcon />}
         </button>
@@ -147,7 +147,7 @@ export default function LoginForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition"
+        className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition cursor-pointer"
       >
         {loading ? "Loading…" : "Login"}
       </button>

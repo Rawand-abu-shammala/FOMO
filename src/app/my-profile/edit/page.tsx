@@ -125,7 +125,7 @@ export default function EditProfilePage() {
               />
               <button
                 type="button"
-                className="absolute inset-y-0 right-2 flex items-center"
+                className="absolute inset-y-0 right-2 flex items-center cursor-pointer"
                 onClick={() => setShowPassword((prev) => !prev)}
               >
                 {showPassword ? (
@@ -218,13 +218,13 @@ export default function EditProfilePage() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 pt-4 w-full max-w-md">
-            <Button type="submit" className="flex-1 bg-blue-600 text-white hover:bg-blue-700">
+            <Button type="submit" className="flex-1 bg-blue-600 text-white hover:bg-blue-700 cursor-pointer">
               Save Change
             </Button>
             <Button
               variant="outline"
               onClick={() => router.push("/my-profile")}
-              className="flex-1 border border-gray-300 text-gray-700 hover:bg-gray-100"
+              className="flex-1 border border-gray-300 text-gray-700 hover:bg-gray-100 cursor-pointer"
             >
               Cancel
             </Button>

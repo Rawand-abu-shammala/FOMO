@@ -16,7 +16,7 @@ export default function Pagination({ pageNumber, pages, route }: PaginationProps
       {pageNumber > 1 ? (
         <Link
           href={`${route}${route.includes("?") ? "&" : "?"}pageNumber=${prev}`}
-          className="flex items-center justify-center w-7 h-7 bg-gray-200 text-gray-600 hover:bg-gray-300 transition rounded-md"
+          className="flex items-center justify-center w-7 h-7 bg-gray-200 text-gray-600 hover:bg-gray-300 transition rounded-md cursor-pointer"
         >
           <ChevronLeftIcon className="w-3 h-3" />
         </Link>
@@ -51,7 +51,7 @@ export default function Pagination({ pageNumber, pages, route }: PaginationProps
       {pageNumber < pages ? (
         <Link
           href={`${route}${route.includes("?") ? "&" : "?"}pageNumber=${next}`}
-          className="flex items-center justify-center w-7 h-7 bg-gray-200 text-gray-600 hover:bg-gray-300 transition rounded-md"
+          className="flex items-center justify-center w-7 h-7 bg-gray-200 text-gray-600 hover:bg-gray-300 transition rounded-md cursor-pointer"
         >
           <ChevronRightIcon className="w-3 h-3" />
         </Link>

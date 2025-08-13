@@ -163,7 +163,7 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
             </p>
             <h2 className='text-xl'>I Went To</h2>
             <StepOneForm data={stepOneData} onChange={handleStepOneChange} />
-            <button className="w-full py-3 bg-blue-600 text-white rounded-lg">
+            <button className="w-full py-3 bg-blue-600 text-white rounded-lg cursor-pointer">
               Next
             </button>
           </form>
@@ -176,7 +176,7 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
               Complete your profile by providing additional information.
             </p>
             <StepTwoForm data={stepTwoData} onChange={(f, v) => setStepTwoData(p => ({ ...p, [f]: v }))} />
-            <button className="w-full py-3 bg-blue-600 text-white rounded-lg">
+            <button className="w-full py-3 bg-blue-600 text-white rounded-lg cursor-pointer">
               {stepOneData.role === 'mentor' ? 'Next' : 'Submit'}
             </button>
           </form>
@@ -189,7 +189,7 @@ export default function SignupForm({ initialRole, onSwitchRole }: Props) {
               Share your expertise and finalize your mentor profile. You are just one step away!
             </p>
             <StepThreeForm data={stepThreeData} onChange={(f, v) => setStepThreeData(p => ({ ...p, [f]: v }))} loading={loading} />
-            <button disabled={loading} className="w-full py-3 bg-blue-600 text-white rounded-lg">
+            <button disabled={loading} className="w-full py-3 bg-blue-600 text-white rounded-lg cursor-pointer">
               {loading ? 'Submitting…' : 'Submit'}
             </button>
           </form>
