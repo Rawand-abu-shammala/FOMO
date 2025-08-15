@@ -117,26 +117,12 @@ export default function StepThree({ data, onChange, loading }: StepThreeProps) {
         />
       </div>
 
-      {/* LinkedIn URL */}
-      <div>
-        <label className="block mb-2 font-medium">LinkedIn Profile</label>
-        <TextInput
-          name="linkedin"
-          type="url"
-          placeholder="https://linkedin.com/in/username"
-          value={data.linkedin}
-          onChange={value => onChange('linkedin', value)}
-          disabled={loading}
-          className={fieldClass}
-        />
-      </div>
-
       {/* Terms checkbox */}
       <div className="flex items-start space-x-3">
         <div
           onClick={() => !loading && onChange('termsAccepted', String(!data.termsAccepted))}
           className={`w-5 h-5 rounded flex items-center justify-center cursor-pointer border border-gray-300 ${
-            data.termsAccepted ? 'bg-blue-600 border-none' : ''
+            data.termsAccepted ? 'border-none' : ''
           }`}
         >
           {data.termsAccepted && (

@@ -49,7 +49,7 @@ export default function ContactForm() {
           <Input
             id="email"
             type="email"
-            placeholder="fakeemail123@gmail.com"
+            placeholder="email123@gmail.com"
             value={email}
             onChange={e => setEmail(e.target.value)}
             required

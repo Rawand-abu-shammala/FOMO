@@ -29,7 +29,7 @@ export default function EditProfilePage() {
     password: "",
     pronoun: "she",
     major: "uxui design",
-    linkedin: "https://www.linkedin.com/in/fakeprofile123/",
+    linkedin: "https://www.linkedin.com/in/profile123/",
     goals: "AI-powered applications that enhance user experiences.",
     bio: `Passionate software engineer with a strong background in full-stack development and AI-driven solutions. She enjoys building scalable and user-friendly applications that integrate cutting-edge AI technologies to enhance digital experiences. With expertise in JavaScript, Python, and cloud computing, she constantly explores new ways to optimize software performance and usability. Always eager to learn, innovate, and contribute, Sarah actively participates in tech communities, hackathons, and open-source projects to stay ahead in the ever-evolving world of technology.`,
   });

@@ -62,7 +62,7 @@ export default function ContactPage() {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="fakeemail123@gmail.com"
+                placeholder="email123@gmail.com"
                 className="bg-gray-100 border-none focus:ring-0 pl-10 w-full"
               />
             </div>
