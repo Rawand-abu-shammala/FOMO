@@ -8,6 +8,10 @@
 //   href?: string;
 // }
 
+// types مشتركة
+
+
+
 // utils/type.ts
 export type Role = 'student' | 'mentor';
 

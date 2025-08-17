@@ -58,6 +58,7 @@ export const articles: ArticleData[] = [
         ]
       }
     ],
+
     resources: [
       { title: 'FreeCodeCamp', url: 'https://www.freecodecamp.org/' },
       { title: 'LeetCode', url: 'https://leetcode.com/' },
