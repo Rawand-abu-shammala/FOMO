@@ -47,15 +47,15 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow sticky top-0 z-20 border-b-0 h-16">
-      <div className="container mx-auto flex items-center justify-between p-4">
+    <header className="sticky top-0 z-20 bg-white shadow">
+      <div className="container mx-auto flex min-h-16 items-center justify-between gap-2 px-4 py-2">
         {/* LEFT GROUP: Logo + Nav */}
-        <div className="flex items-center space-x-12">
-          <Link href="/home" className="flex items-center space-x-2 text-2xl font-bold text-blue-600">
+        <div className="flex min-w-0 shrink items-center gap-4 xl:gap-12">
+          <Link href="/home" className="flex shrink-0 items-center gap-2 text-2xl font-bold text-blue-600">
             <Logo className="w-8 h-8" />
             <span>FOMO</span>
           </Link>
-          <nav className="hidden md:flex space-x-6 text-gray-700">
+          <nav className="hidden xl:flex gap-6 text-gray-700">
             {navItems.map((t) => (
               <Link
                 key={t}
@@ -74,7 +74,7 @@ export default function Header() {
             {/* Mobile & Tablet: visible below lg */}
             <form
               onSubmit={onSearchSubmit}
-              className="relative block lg:hidden mx-2 flex-grow"
+              className="relative mx-1 min-w-0 flex-1 xl:hidden"
             >
               <Input
                 type="text"
@@ -87,7 +87,7 @@ export default function Header() {
             {/* Desktop: visible at lg+ */}
             <form
               onSubmit={onSearchSubmit}
-              className="relative hidden lg:block mx-4 flex-shrink-0"
+              className="relative mx-4 hidden shrink-0 xl:block"
             >
               <Input
                 type="text"
@@ -101,16 +101,16 @@ export default function Header() {
         )}
 
         {/* RIGHT GROUP: Profile + Mobile Button */}
-        <div className="flex items-center space-x-2">
+        <div className="flex shrink-0 items-center gap-2">
           {/* Desktop profile */}
-          <div className="hidden md:flex items-center space-x-1 text-gray-700 hover:text-blue-600">
-            <Link href="/my-profile" className="flex items-center space-x-1 whitespace-nowrap">
+          <div className="hidden xl:flex items-center gap-1 text-gray-700 hover:text-blue-600">
+            <Link href="/my-profile" className="flex items-center gap-1 whitespace-nowrap">
               <Profile className="w-5 h-5" />
               <span className="whitespace-nowrap">My Profile</span>
             </Link>
           </div>
           {/* Mobile menu button */}
-          <Button variant="ghost" className="cursor-pointer md:hidden" onClick={() => setOpen(!open)}>
+          <Button variant="ghost" className="cursor-pointer xl:hidden" onClick={() => setOpen(!open)}>
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </Button>
         </div>
@@ -118,7 +118,7 @@ export default function Header() {
 
       {/* Mobile nav */}
       {open && (
-        <nav className="md:hidden bg-white border-t">
+        <nav className="xl:hidden bg-white border-t">
           {[...navItems, 'Tracks', 'My Profile'].map((t) => {
             let href: string
             if (t === 'My Profile') href = '/profile'

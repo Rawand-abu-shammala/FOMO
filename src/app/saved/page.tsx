@@ -57,7 +57,7 @@ export default function SavedPage() {
         {items.map(item => (
           <UICard
             key={item.id}
-            className="relative flex flex-row items-start bg-gray-50 rounded-2xl shadow-sm p-6 hover:shadow-md transition border-none"
+            className="relative flex flex-col items-start gap-4 bg-gray-50 p-4 pr-12 shadow-sm transition hover:shadow-md sm:flex-row sm:gap-0 sm:p-6"
           >
             {/* Remove button */}
             <button
@@ -69,7 +69,7 @@ export default function SavedPage() {
             </button>
 
             {/* Image and role column */}
-            <div className="flex-shrink-0 flex flex-col items-center text-center mr-6">
+            <div className="flex shrink-0 flex-row items-center gap-3 text-left sm:mr-6 sm:flex-col sm:gap-0 sm:text-center">
               <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-200">
                 <Image
                   src={item.authorAvatarUrl}
@@ -79,13 +79,13 @@ export default function SavedPage() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <span className="mt-2 text-xs text-gray-500">
+              <span className="text-xs text-gray-500 sm:mt-2">
                 {item.authorRole}
               </span>
             </div>
 
             {/* Title and excerpt column */}
-            <div className="flex-1">
+            <div className="min-w-0 flex-1">
               <h2 className="text-lg font-semibold text-gray-900 mb-2">
                 {item.title}
               </h2>

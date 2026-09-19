@@ -12,15 +12,12 @@ export default function Navbar() {
         </span>
       </div>
 
-      <nav className="flex items-center gap-3 sm:gap-6">
-        <Button className="text-sm sm:text-base font-medium text-blue-600 border border-blue-600 rounded-full w-24 sm:w-32 text-center py-1 sm:py-2 hover:bg-blue-50 transition-colors cursor-pointer">
-
-        <Link href="/login"> 
-          Login
-        </Link>
+      <nav className="flex shrink-0 items-center gap-2 sm:gap-6">
+        <Button asChild className="w-20 rounded-full border border-blue-600 py-1 text-center text-xs font-medium text-blue-600 transition-colors hover:bg-blue-50 sm:w-32 sm:py-2 sm:text-base">
+          <Link href="/login">Login</Link>
         </Button>
-        <Button className="bg-blue-600 text-white rounded-full w-24 sm:w-32 py-1 sm:py-2 text-sm sm:text-base hover:bg-blue-700 transition-colors cursor-pointer">
-         <Link href="/signup">Join Now</Link>
+        <Button asChild className="w-20 rounded-full bg-blue-600 py-1 text-xs text-white transition-colors hover:bg-blue-700 sm:w-32 sm:py-2 sm:text-base">
+          <Link href="/signup">Join Now</Link>
         </Button>
       </nav>
     </header>

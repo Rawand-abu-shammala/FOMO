@@ -13,9 +13,9 @@ export function BlogCard({ post }: BlogCardProps) {
 
   return (
     <Card className="w-full rounded-2xl border-none shadow-sm hover:shadow-md transition overflow-hidden">
-      <div className="flex flex-row">
+      <div className="flex flex-col sm:flex-row">
         {/* Avatar and name section on the left */}
-        <div className="flex-shrink-0 w-[110px] p-4 flex flex-col items-center">
+        <div className="flex shrink-0 flex-col items-center p-4 sm:w-[110px]">
           <Image
             src={post.authorAvatarUrl}
             alt={post.authorName}
@@ -24,7 +24,7 @@ export function BlogCard({ post }: BlogCardProps) {
             className="rounded-full object-cover"
           />
           {/* Display first name and last name */}
-          <div className="mt-2 flex space-x-1">
+          <div className="mt-2 flex flex-wrap justify-center gap-x-1">
             <span className="text-sm font-medium text-gray-900 whitespace-nowrap">
               {firstName}
             </span>
@@ -35,7 +35,7 @@ export function BlogCard({ post }: BlogCardProps) {
         </div>
 
         {/* Content section (title + excerpt + read link) on the right */}
-        <div className="flex flex-col justify-between flex-1 p-4">
+        <div className="flex min-w-0 flex-1 flex-col justify-between p-4 pt-0 sm:pt-4">
           {/* Title and excerpt */}
           <div>
             <span className="block text-lg font-semibold text-gray-900">

@@ -1,14 +1,12 @@
 // // src/components/TrackCard.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { CardType } from '../utils/type';
 import { Card as UICard } from '@/components/ui/card';
 import  Heart   from '@/components/icons/heart';
-
-const FAV_KEY = 'favouriteTracks';
+import { useFavouriteTracks } from '@/hooks/useFavouriteTracks';
 
 export default function TrackCard({
   href,
@@ -17,27 +15,18 @@ export default function TrackCard({
   description,
   image,
 }: CardType) {
-  // Favorite state based on localStorage
-  const [favorited, setFavorited] = useState(false);
-
-  useEffect(() => {
-    const favs = JSON.parse(localStorage.getItem(FAV_KEY) || '[]') as string[];
-    setFavorited(favs.includes(slug));
-  }, [slug]);
+  const { favouriteTracks, toggleFavouriteTrack } = useFavouriteTracks();
+  const favorited = favouriteTracks.includes(slug);
 
   const toggleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
-    const favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || '[]') as string[]);
-    if (favs.has(slug)) favs.delete(slug);
-    else favs.add(slug);
-    localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(favs)));
-    setFavorited(favs.has(slug));
+    toggleFavouriteTrack(slug);
   };
 
   const linkHref = href ?? `/${slug}`;
 
   return (
-    <Link href={linkHref} className="block max-w-sm m-1">
+    <Link href={linkHref} className="block h-full w-full max-w-sm m-1">
       <UICard className="flex flex-col h-full rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 bg-white border-none p-2">
         {/* Image */}
         <div className="relative w-full h-32 overflow-hidden">

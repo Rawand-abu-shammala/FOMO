@@ -15,8 +15,8 @@ export default function ProfilePage() {
   };
 
   return (
-    <main className="w-11/12 mx-auto px-6 py-10">
-      <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-32">
+    <main className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-32">
         <div className="w-full lg:w-2/3">
           <div className="space-y-6">
             <p>
@@ -47,11 +47,11 @@ export default function ProfilePage() {
             </div>
         </div>
 
-        <div className="w-full lg:w-1/3">
+        <div className="w-full max-w-md self-center lg:w-1/3 lg:self-start">
           <Image
             src={user.avatarUrl}
             alt="Avatar"
-            layout="responsive"
+            sizes="(max-width: 1024px) 100vw, 33vw"
             width={300}
             height={400}
             className="object-cover rounded-lg"

@@ -23,7 +23,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container mx-auto flex-grow flex flex-col md:flex-row items-start gap-8px-4 py-8 sm:p-6">
+    <div className="container mx-auto flex flex-grow flex-col items-start gap-8 px-4 py-8 sm:px-6 md:flex-row">
       {/* Form Section */}
       <div className="flex-1 w-full max-w-lg">
         <h2 className="mt-6 text-2xl md:text-3xl font-semibold mb-4">Contact Us</h2>
