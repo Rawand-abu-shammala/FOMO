@@ -1,53 +1,18 @@
 // src/components/ArticleEditor.tsx
 'use client';
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import type { ArticleData } from '../utils/type';
+import { useArticleEditor } from '@/hooks/useArticleEditor';
 
 export default function ArticleEditor({ initialArticle }: { initialArticle: ArticleData }) {
-  const router = useRouter();
-  const [article, setArticle] = useState<ArticleData>(initialArticle);
-  const [sectionsJSON, setSectionsJSON] = useState(JSON.stringify(initialArticle.sections, null, 2));
-  const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  async function handleSave() {
-    setError(null);
-
-    // محاولة تحويل ال JSON مع تحقق مبسّط
-    let parsedSections: ArticleData['sections'];
-    try {
-  parsedSections = JSON.parse(sectionsJSON) as ArticleData['sections'];
-} catch {
-  setError('صيغة الأقسام غير صحيحة. تأكد من JSON.');
-  return;
-}
-
-    try {
-      const payload = { ...article, sections: parsedSections };
-      setSaving(true);
-      const res = await fetch('/api/articles', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) {
-        const txt = await res.text();
-        throw new Error(txt || 'Save failed');
-      }
-      setSaving(false);
-      router.refresh();
-      alert('تم الحفظ');
-    } catch (err: unknown) {
-      setSaving(false);
-      // نتحقق إن الخطأ من نوع Error عشان نقدر نقرأ message
-      if (err instanceof Error) {
-        setError(err.message || 'خطأ أثناء الحفظ');
-      } else {
-        setError('حدث خطأ غير متوقع');
-      }
-    }
-  }
+  const {
+    article,
+    setArticle,
+    sectionsJSON,
+    setSectionsJSON,
+    saving,
+    error,
+    saveArticle,
+  } = useArticleEditor(initialArticle);
 
   return (
     <div className="bg-white p-4 rounded shadow-sm mb-6">
@@ -95,7 +60,7 @@ export default function ArticleEditor({ initialArticle }: { initialArticle: Arti
       {error && <div className="text-red-600 mt-2">{error}</div>}
 
       <div className="mt-4">
-        <button onClick={handleSave} disabled={saving} className="btn">
+        <button onClick={saveArticle} disabled={saving} className="btn">
           {saving ? 'Saving...' : 'Save changes'}
         </button>
       </div>

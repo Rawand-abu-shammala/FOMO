@@ -40,8 +40,21 @@ export function useFavouriteTracks() {
     });
   }, []);
 
+  const removeFavouriteTrack = useCallback((slug: string) => {
+    setFavouriteTracks((currentTracks) => {
+      const nextTracks = currentTracks.filter((track) => track !== slug);
+      window.localStorage.setItem(
+        FAVOURITE_TRACKS_KEY,
+        JSON.stringify(nextTracks)
+      );
+
+      return nextTracks;
+    });
+  }, []);
+
   return {
     favouriteTracks,
     toggleFavouriteTrack,
+    removeFavouriteTrack,
   };
 }

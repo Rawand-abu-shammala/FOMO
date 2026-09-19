@@ -1,30 +1,15 @@
 // src/app/favourite/page.tsx
 'use client';
 
-import { useEffect, useState } from 'react';
 import FavouriteCard from '../components/FavouriteCard';
 import { tracks, type Track } from '../utils/tracksData';
-
-const FAV_KEY = 'favouriteTracks';
+import { useFavouriteTracks } from '@/hooks/useFavouriteTracks';
 
 export default function FavouritePage() {
-  const [favs, setFavs] = useState<string[]>([]);
-
-  // Load favourite slugs from localStorage on mount
-  useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem(FAV_KEY) || '[]') as string[];
-    setFavs(stored);
-  }, []);
-
-  // Remove a slug from both state and localStorage
-  const handleRemove = (slug: string) => {
-    const next = favs.filter(s => s !== slug);
-    setFavs(next);
-    localStorage.setItem(FAV_KEY, JSON.stringify(next));
-  };
+  const { favouriteTracks, removeFavouriteTrack } = useFavouriteTracks();
 
   // Filter the master list down to only favourites
-  const favTracks: Track[] = tracks.filter((t) => favs.includes(t.slug));
+  const favTracks: Track[] = tracks.filter((track) => favouriteTracks.includes(track.slug));
 
   // Empty state
   if (favTracks.length === 0) {
@@ -46,7 +31,7 @@ export default function FavouritePage() {
         <FavouriteCard
           key={track.slug}
           {...track}
-          onRemove={handleRemove}
+          onRemove={removeFavouriteTrack}
         />
       ))}
     </div>
