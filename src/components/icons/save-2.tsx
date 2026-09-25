@@ -2,7 +2,7 @@ import * as React from "react";
 import type { SVGProps } from "react";
 import { memo } from "react";
 
-// 1. أضف واجهة ترث من SVGProps وتعرّف filled
+// 1. Add an interface that extends SVGProps and defines filled
 interface SaveIconProps extends SVGProps<SVGSVGElement> {
   filled?: boolean;
 }
@@ -12,12 +12,12 @@ const SvgSave2 = ({ filled = false, ...props }: SaveIconProps) => (
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
     height="1em"
-    // 2. استخدم fill بدل filled للتحكم بالتعبئة
+    // 2. Use fill instead of filled to control the fill
     fill={filled ? "currentColor" : "none"}
     viewBox="0 0 24 24"
     {...props}
   >
-    {/* إذا كانت الأيقونة ممتلئة، يمكنك إزالة stroke بالكامل أو تغييره */}
+    {/* If the icon is filled, you can remove the stroke entirely or change it */}
     <path
       stroke={filled ? "none" : "#292D32"}
       strokeLinecap="round"

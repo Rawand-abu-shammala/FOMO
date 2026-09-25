@@ -102,7 +102,7 @@ export default function ArticleEditor({ initialArticle }: { initialArticle: Arti
 //         throw new Error(txt || 'Save failed');
 //       }
 //       setSaving(false);
-//       // إعادة جلب الصفحة لتظهر التغييرات (server components ستجلب النسخة الجديدة)
+//       // Refresh the page so the changes appear (server components will fetch the new version)
 //       router.refresh();
 //       alert('تم الحفظ');
 //     } catch (err: any) {

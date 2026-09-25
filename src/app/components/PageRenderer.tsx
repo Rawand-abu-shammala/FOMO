@@ -31,7 +31,7 @@ export function PageRenderer({ data }: Props) {
 
       {/* Sections */}
       {data.sections.map((section, idx) => {
-        // إذا القسم يحتوي فقط على صورة (heading فارغ)، نعرض الصورة بدون بطاقة عنوان
+        // If the section contains only an image (empty heading), display the image without a title card
         if (!section.heading && section.imageUrl) {
           return (
             <div key={idx} className="mb-6 w-full">

@@ -23,7 +23,7 @@
 //       <ArrowRight className="w-4 h-4 mx-2 text-gray-400" />
 //       <span className="text-gray-700">{displayTitle}</span>
 
-//       {/* مثال بسيط لعرض badge للصلاحية */}
+//       {/* Simple example of displaying a permission badge */}
 //       <div className="ml-auto">
 //         {role === 'mentor' ? (
 //           <span className="text-xs px-2 py-1 bg-green-100 text-green-800 rounded">Mentor view</span>

@@ -6,20 +6,20 @@ export interface ResourceLink {
 
 export interface SectionContent {
   heading: string;
-  paragraphs?: string[];    // فقرات نصية تحت العنوان
-  listItems?: string[];     // قائمة نقطية إن وجدت
-  imageUrl?: string;        // مسار صورة ضمن public أو URL خارجي
+  paragraphs?: string[];    // Text paragraphs below the heading
+  listItems?: string[];     // Bulleted list, if present
+  imageUrl?: string;        // Image path within public or an external URL
   imageAlt?: string;
 }
 
 export interface PageData {
-  slug: string;             // مسار الصفحة، مثلاً "learn-english-for-software-engineering"
-  title: string;            // العنوان الرئيسي في الصفحة
-  subtitle?: string;        // الفقرة التمهيدية (ملخّص أو مقدمة قصيرة)
-  heroImageUrl?: string;    // الصورة الكبيرة أعلى الصفحة
+  slug: string;             // Page path, for example "learn-english-for-software-engineering"
+  title: string;            // Main page heading
+  subtitle?: string;        // Introductory paragraph (summary or short introduction)
+  heroImageUrl?: string;    // Large image at the top of the page
   heroImageAlt?: string;
-  cardDescription: string;  // الوصف القصير للبطاقة في الصفحة الرئيسية
-  cardImage: string;        // صورة البطاقة في الصفحة الرئيسية
+  cardDescription: string;  // Short card description on the home page
+  cardImage: string;        // Card image on the home page
   sections: SectionContent[]; 
   resources?: ResourceLink[]; 
   seo?: {

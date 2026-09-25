@@ -2,7 +2,7 @@
 import { PageData } from "./types";
 
 export const pagesData: PageData[] = [
-  // 1) الصفحة الفعلية: Learn English For Software Engineering
+  // 1) Actual page: Learn English For Software Engineering
   {
     slug: "learn-english-for-software-engineering",
     title: "Learn English For Software Engineering: Why It Matters & How To Improve",
@@ -14,16 +14,16 @@ export const pagesData: PageData[] = [
       "أهمية اللغة الإنجليزية لمهندسي البرمجيات واستراتيجيات التحسين.",
     cardImage: "/images/learn-english-hero.jpg",
     sections: [
-      // القسم الأول: لماذا الإنجليزية مهمة
+      // First section: Why English matters
       {
         heading: "Why English Is Important For Software Engineers",
-        // نستخدم في هذا القسم أقسامًا فرعية كلّ منها عنوان ووصف، لكن نظراً لبساطة الهيكل، سنفصل كل نقطة كقسم مستقلّ أدناه.
-        // هنا يمكن ترك فقرة تمهيدية أو مباشرة الانتقال إلى الأقسام الفرعية:
+        // This section uses subsections with their own headings and descriptions, but because the structure is simple, each point is separated into its own section below.
+        // You can leave an introductory paragraph here or move directly to the subsections:
         paragraphs: [
           "في عالم البرمجة والتطوير، كثير من الموارد والمستندات والمجتمعات تعتمد الإنجليزية كلغة أساسية. إجادتك للإنجليزية تساعدك على الوصول إلى أحدث المعلومات والتواصل بفعالية."
         ]
       },
-      // الفصول الفرعية داخل "Why English Is Important"
+      // Subsections within "Why English Is Important"
       {
         heading: "Understanding Documentation & Resources",
         paragraphs: [
@@ -48,13 +48,13 @@ export const pagesData: PageData[] = [
           "Many top tech companies conduct interviews in English. Additionally, major conferences such as Google I/O, WWDC, and AWS re:Invent are held in English, making it essential to understand and engage with the latest industry trends."
         ]
       },
-      // إضافة صورة وسطية بعد القسم الأول 
+      // Add an image after the first section
       {
-        heading: "", // يمكن ترك العنوان فارغًا أو عنوان عام مثل "Illustration"
+        heading: "", // The heading can be left empty or given a general title such as "Illustration"
         imageUrl: "/images/learn-english-section.jpg",
         imageAlt: "Workspace with English learning materials and code on screen"
       },
-      // القسم الثاني: كيف تحسن الإنجليزية لمهندس البرمجيات
+      // Second section: How to improve your English for software engineering
       {
         heading: "How To Improve Your English For Software Engineering",
         paragraphs: [
@@ -100,23 +100,23 @@ export const pagesData: PageData[] = [
           "If you want structured learning, consider taking an English for Software Engineering course. These courses focus on technical vocabulary, communication skills, and documentation writing to help you become more confident in professional settings."
         ]
       },
-      // قسم Resources (في الصورة كان العنوان Resources ولكن لم يظهر محتوى واضح أسفلها، يمكنك إضافة روابط فعلية لديك أو تركه فارغاً)
+      // Resources section (the image showed the title Resources without clear content below it; you can add actual links or leave it empty)
       {
         heading: "Resources",
         paragraphs: [
-          // إن كان لديك روابط فعلية يمكنك إضافتها على النحو:
+          // If you have actual links, you can add them as follows:
           // "• English for Tech Professionals course: https://example.com", 
-          // أو ترك مصفوفة resources في الأسفل بدل هذه الفقرة.
+          // Or leave the resources array below instead of this paragraph.
         ]
       }
     ],
     resources: [
-      // يمكنك ملء هذه القائمة برابط إلى دورات أو مواقع تعلم الإنجليزية التقنية:
+      // You can fill this list with links to technical English courses or learning websites:
       { label: "Stack Overflow", url: "https://stackoverflow.com" },
       { label: "MDN Web Docs", url: "https://developer.mozilla.org" },
       { label: "W3Schools", url: "https://www.w3schools.com" },
       { label: "Meetup.com", url: "https://www.meetup.com" },
-      // إذا لديك كورس معين:
+      // If you have a specific course:
       // { label: "English for Software Engineers Course", url: "https://example.com/course" },
     ],
     seo: {
@@ -126,7 +126,7 @@ export const pagesData: PageData[] = [
     }
   },
 
-  // 2) صفحتك الثانية – مثال placeholder (عدل المحتوى الفعلي بناءً على الصورة/التصميم الخاص بك)
+  // 2) Your second page - placeholder example (adjust the actual content based on your image/design)
   {
     slug: "software-engineering", 
     title: "Software Engineering: Bridging Academia And The Job Market",
@@ -140,13 +140,13 @@ export const pagesData: PageData[] = [
       {
         heading: "Industry Relevance in the Technology Field",
         paragraphs: [
-          // انسخ المحتوى الفعلي من صورتك هنا
+          // Copy the actual content from your image here
         ]
       },
-      // ... باقي الأقسام بعد استخراجك للمحتوى الحقيقي من الصورة
+      // ... remaining sections after extracting the actual content from the image
     ],
     resources: [
-      // روابط حقيقية لديك
+      // Any actual links you have
     ],
     seo: {
       title: "Software Engineering: Bridging Academia And The Job Market",
@@ -155,7 +155,7 @@ export const pagesData: PageData[] = [
     }
   },
 
-  // 3) الصفحة الثالثة – placeholder
+  // 3) Third page - placeholder
   {
     slug: "learn-how-to-learn-tech-industry",
     title: "Learn How to Learn in the Tech Industry: Effective Techniques",
@@ -168,13 +168,13 @@ export const pagesData: PageData[] = [
       {
         heading: "Effective Learning Techniques in the Tech Industry",
         paragraphs: [
-          // انسخ المحتوى الفعلي هنا
+          // Copy the actual content here
         ]
       }
       // ...
     ],
     resources: [
-      // روابط فعلية
+      // Actual links
     ],
     seo: {
       title: "Learn How to Learn in the Tech Industry",
@@ -182,7 +182,7 @@ export const pagesData: PageData[] = [
     }
   },
 
-  // 4) الصفحة الرابعة – placeholder
+  // 4) Fourth page - placeholder
   {
     slug: "fundamentals-technology-software-engineering",
     title: "Fundamentals Of Technology & Software Engineering",
@@ -195,13 +195,13 @@ export const pagesData: PageData[] = [
       {
         heading: "Basics of Technology",
         paragraphs: [
-          // انسخ المحتوى الفعلي هنا
+          // Copy the actual content here
         ]
       }
       // ...
     ],
     resources: [
-      // روابط فعلية
+      // Actual links
     ],
     seo: {
       title: "Fundamentals Of Technology & Software Engineering",

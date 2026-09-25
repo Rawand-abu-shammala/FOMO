@@ -11,7 +11,7 @@
 //   linkedin: string
 //   experience: string
 //   specialties: string
-  
+
 
 // }
 
@@ -33,10 +33,10 @@ export interface StepTwoData {
 
 // src/utils/signup.ts
 
-// دور المستخدم المدعوم
+// Supported user role
 export type Role = 'student' | 'mentor'
 
-// الشكل الخاص بالخطوة الأولى
+// Shape for the first step
 export interface StepOneData {
   role: Role
   firstName: string
@@ -74,10 +74,10 @@ export interface StepThreeData {
   welcome: string  // welcome statement
   experienceYears: string
   termsAccepted: boolean
-    bio: string
+  bio: string
   experience: string
   specialties: string
-  loading: boolean 
+  loading: boolean
 }
 
 
@@ -136,7 +136,7 @@ export interface StepThreeData {
 
 
 
-// ثم يمكنك استيراده في صفحة التسجيل:
+// You can then import it into the signup page:
 // import type { StepOneData } from '../../utils/signup'
 
 
