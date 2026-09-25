@@ -4,42 +4,14 @@
 // Prevent static pre‑rendering for this page
 export const dynamic = 'force-dynamic';
 
-import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Bag from '@/components/icons/bag'
 import { Card as UICard } from '@/components/ui/card'
-
-type SavedItem = {
-  id: string
-  authorName: string
-  authorRole: string
-  authorAvatarUrl: string
-  title: string
-  excerpt: string
-}
+import { useSavedPosts } from '@/hooks/useSavedPosts'
 
 export default function SavedPage() {
-  const [items, setItems] = useState<SavedItem[]>([])
-
-  useEffect(() => {
-    const loaded: SavedItem[] = []
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i)
-      if (key?.startsWith('saved_')) {
-        try {
-          const obj = JSON.parse(localStorage.getItem(key) || 'null')
-          if (obj?.id) loaded.push(obj)
-        } catch {}
-      }
-    }
-    setItems(loaded)
-  }, [])
-
-  const handleRemove = (id: string) => {
-    localStorage.removeItem(`saved_${id}`)
-    setItems(prev => prev.filter(it => it.id !== id))
-  }
+  const { posts: items, remove: handleRemove } = useSavedPosts()
 
   if (items.length === 0) {
     return (

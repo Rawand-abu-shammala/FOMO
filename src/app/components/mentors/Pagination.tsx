@@ -11,7 +11,7 @@ export default function Pagination({ pageNumber, pages, route }: PaginationProps
   const next = pageNumber + 1;
 
   return (
-    <nav aria-label="Pagination" className="flex items-center justify-end mt-8 space-x-2">
+    <nav aria-label="Pagination" className="flex flex-wrap items-center justify-end mt-8 gap-2">
       {/* Previous button */}
       {pageNumber > 1 ? (
         <Link

@@ -1,6 +1,5 @@
 import React from 'react';
-
-type Role = 'student' | 'mentor';
+import type { Role } from '../../../utils/signup';
 
 interface RoleSelectorProps {
   value: Role;

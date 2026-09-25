@@ -1,12 +1,12 @@
 // src/components/mentors/FeaturedPost.tsx
 "use client";
 
-import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SaveIcon from "@/components/icons/save-2";
 import { Button } from "@/components/ui/button";
 import { FeaturedPostProps } from "../../utils/type";
+import { useSavedPosts, type SavedPost } from "@/hooks/useSavedPosts";
 
 export function FeaturedPost({
   authorName,
@@ -16,31 +16,22 @@ export function FeaturedPost({
   excerpt,
   id,
 }: FeaturedPostProps) {
-  const [saved, setSaved] = React.useState(false);
-
-  React.useEffect(() => {
-    const isSaved = Boolean(localStorage.getItem(`saved_${id}`));
-    setSaved(isSaved);
-  }, [id]);
-
-  const handleSave = () => {
-    if (saved) {
-      localStorage.removeItem(`saved_${id}`);
-    } else {
-      localStorage.setItem(
-        `saved_${id}`,
-        JSON.stringify({ id, authorName, authorRole, authorAvatarUrl, title, excerpt })
-      );
-    }
-    setSaved(!saved);
+  const post: SavedPost = {
+    id,
+    authorName,
+    authorRole,
+    authorAvatarUrl,
+    title,
+    excerpt,
   };
+  const { saved, toggle } = useSavedPosts(post);
 
   return (
     <div className="relative mb-16 bg-gray-50 rounded-2xl shadow-sm p-6">
       <Button
         variant="ghost"
         size="icon"
-        onClick={handleSave}
+        onClick={toggle}
         aria-label={saved ? "Unsave excerpt" : "Save excerpt"}
         className="absolute top-4 right-4 p-0 focus:ring-0 cursor-pointer"
       >
