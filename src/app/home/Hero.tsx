@@ -39,7 +39,7 @@ export default function Hero({ role }: { role?: Role }) {
           alt={isMentor ? 'Mentor hero' : 'Hero'}
           width={600}
           height={400}
-          className="rounded-lg object-cover"
+          className="max-w-full h-auto rounded-lg object-cover"
           priority
         />
       </div>

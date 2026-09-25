@@ -8,7 +8,7 @@ import { sections } from "../utils/privacyPolicy";
 export default function PrivacyPolicyPage() {
   return (
     <main className="w-full mt-8 p-6 overflow-visible">
-      <div className="relative w-4/5 ml-4 md:ml-10 mb-8 overflow-visible">
+      <div className="relative w-full max-w-7xl mx-auto mb-8 px-4 md:px-10 overflow-visible">
         <div className="flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-2/3 text-left space-y-4">
             <h1 className="text-4xl font-bold">Privacy Policy</h1>
@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div className="relative w-full mt-6 md:mt-0 md:w-1/3">
-            <div className="relative md:absolute md:top-0 md:right-[-80px] lg:right-[-160px] w-full overflow-visible">
+            <div className="relative md:absolute md:top-0 md:right-0 2xl:right-[-160px] w-full max-w-md mx-auto overflow-visible">
               <Image
                 src="/assets/images/privacy-policy.svg"
                 alt="Privacy Illustration"
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </div>
 
-      <div className="w-4/5 ml-4 md:ml-10 space-y-8 text-left">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-10 space-y-8 text-left">
         {sections.map((section: Section) => (
           <section key={section.title} className="space-y-4">
             <h2 className="text-2xl font-semibold">{section.title}</h2>

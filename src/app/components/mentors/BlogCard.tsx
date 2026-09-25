@@ -25,10 +25,10 @@ export function BlogCard({ post }: BlogCardProps) {
           />
           {/* Display first name and last name */}
           <div className="mt-2 flex flex-wrap justify-center gap-x-1">
-            <span className="text-sm font-medium text-gray-900 whitespace-nowrap">
+            <span className="text-sm font-medium text-gray-900 break-words">
               {firstName}
             </span>
-            <span className="text-sm font-medium text-gray-900 whitespace-nowrap">
+            <span className="text-sm font-medium text-gray-900 break-words">
               {lastName}
             </span>
           </div>

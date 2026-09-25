@@ -36,13 +36,13 @@ export default function TrackCard({
         <div className="flex-1 flex flex-col justify-center items-start text-left p-4">
           {/* Title and heart icon row */}
           <div className="w-full flex justify-between items-center mb-2">
-            <h3 className="text-base font-semibold text-gray-900">
+            <h3 className="min-w-0 break-words text-base font-semibold text-gray-900">
               {title}
             </h3>
             <button
               onClick={toggleFavorite}
               aria-label={favorited ? 'Unfavorite' : 'Favorite'}
-              className="p-1 rounded-full bg-white hover:bg-gray-100 transition cursor-pointer"
+              className="shrink-0 p-1 rounded-full bg-white hover:bg-gray-100 transition cursor-pointer"
             >
               <Heart
                 filled={favorited}

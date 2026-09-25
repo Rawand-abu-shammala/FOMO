@@ -51,28 +51,28 @@ export default function SettingsPage() {
       <div className="container mx-auto px-4 text-sm text-gray-500 mb-4 space-y-5 text-gray-700">
 
         {/* <div className="space-y-5 text-gray-700"> */}
-          <div className="flex items-center">
+          <div className="flex flex-col items-start sm:flex-row sm:items-center">
             <span className="font-medium text-gray-900">Name</span>
-            <span className="ml-2">{userInfo.name}</span>
+            <span className="ml-0 min-w-0 max-w-full break-words sm:ml-2">{userInfo.name}</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col items-start sm:flex-row sm:items-center">
             <span className="font-medium text-gray-900">Role</span>
-            <span className="ml-2">{userInfo.role}</span>
+            <span className="ml-0 min-w-0 max-w-full break-words sm:ml-2">{userInfo.role}</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col items-start sm:flex-row sm:items-center">
             <span className="font-medium text-gray-900">Birthday</span>
-            <span className="ml-2">{userInfo.birthday}</span>
+            <span className="ml-0 min-w-0 max-w-full break-words sm:ml-2">{userInfo.birthday}</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col items-start sm:flex-row sm:items-center">
             <span className="font-medium text-gray-900">Email</span>
-            <span className="ml-2">{userInfo.email}</span>
+            <span className="ml-0 min-w-0 max-w-full break-words sm:ml-2">{userInfo.email}</span>
           </div>
         </div>
 
         {/* <div className="container mx-auto px-4 py-8 text-sm text-gray-500 mb-4 flex items-center pl-6"> */}
 
 
-        <div className="container mx-auto mt-10 flex space-x-4 pl-3">
+        <div className="container mx-auto mt-10 flex flex-col gap-3 pl-3 sm:flex-row sm:space-x-4 sm:gap-0">
           <Button
             onClick={handleLogout}
             className="w-36 py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"

@@ -47,7 +47,7 @@ export default async function MentorProfile({
 
       <div className="flex flex-col-reverse lg:flex-row items-start gap-8 mt-6">
         {/* Left: Info */}
-        <div className="flex-1 p-8 space-y-8">
+        <div className="flex-1 p-4 sm:p-8 space-y-8 min-w-0">
           <div className="space-y-4">
             <div className="leading-relaxed">
               <span className="font-bold">Name:</span>{' '}

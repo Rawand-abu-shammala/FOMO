@@ -31,7 +31,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-24">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8 xl:space-x-24">
           {/* First list */}
           <div className="flex flex-col space-y-3 lg:mt-6">
             {['Home', 'About Us', 'Contact Us'].map(item => (

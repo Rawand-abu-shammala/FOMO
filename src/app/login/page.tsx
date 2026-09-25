@@ -17,6 +17,7 @@ export default function LoginPage() {
           alt="login"
             width={500}
           height={500}
+          className="max-w-full h-auto"
         />
       </div>
       <div className="flex-1 flex items-center justify-center p-8">

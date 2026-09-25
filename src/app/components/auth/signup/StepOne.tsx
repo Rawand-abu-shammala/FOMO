@@ -145,7 +145,7 @@ export default function StepOne({ data, onChange }: StepOneProps) {
 
       {/* Date of Birth */}
       <label className="block font-medium mb-2">Date Of Birth</label>
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-3 gap-2 mb-6 sm:gap-4">
         {(['dd', 'mm', 'yyyy'] as const).map(field => (
           <div key={field} className="relative">
             <CalendarIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
