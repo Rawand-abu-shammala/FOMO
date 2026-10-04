@@ -1,18 +1,21 @@
 // src/app/tracks/page.tsx
-"use client";
 
 // (no SSG/SSP prerender)
 export const dynamic = "force-dynamic";
 
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import TrackList from "./TrackList";
 import { tracks } from "../utils/tracksData";
 import Tab from "../components/tab";
 
-export default function TrackPage() {
-  const searchParams = useSearchParams();
-  const initialSearch = searchParams.get("search") || "";
+type PageProps = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function TrackPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const searchValue = Array.isArray(params.search) ? params.search[0] : params.search;
+  const initialSearch = searchValue ?? "";
 
   return (
     <>

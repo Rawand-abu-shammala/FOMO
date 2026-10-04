@@ -1,13 +1,16 @@
 // mentors/page.tsx
-'use client';
-import { useSearchParams } from 'next/navigation';
 import Card from '../components/CardMentors';
 import Pagination from '../components/mentors/Pagination';
 import { mentorsData } from '../utils/mentors';
 
-export default function MentorListPage() {
-  const params = useSearchParams();
-  const page = parseInt(params.get('page') ?? '1', 10);
+type PageProps = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function MentorListPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const pageValue = Array.isArray(params.page) ? params.page[0] : params.page;
+  const page = parseInt(pageValue ?? '1', 10);
   const perPage = 6;
   const mentors = mentorsData.slice((page - 1) * perPage, page * perPage);
   const totalPages = Math.ceil(mentorsData.length / perPage);

@@ -1,7 +1,4 @@
 // src/components/mentors/CategoryTabs.tsx
-"use client";
-
-import * as React from "react";
 import { Category } from "../../utils/type";
 import { categories } from "../../utils/data";
 

@@ -1,7 +1,4 @@
 // src/components/mentors/AllArticles.tsx
-"use client";
-
-import * as React from "react";
 import { allPosts } from "../../utils/data";
 import { FeaturedPost } from "./FeaturedPost";
 
