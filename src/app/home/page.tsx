@@ -15,7 +15,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero role={role ?? undefined} />
-      <section className="max-w-7xl mx-auto px-4 py-12">
+      <section id="learning-paths" className="max-w-7xl mx-auto px-4 py-12">
         <h2 className="text-2xl font-semibold mb-6">
           {role === 'mentor'
             ? 'Welcome back — resources for mentors'
@@ -30,4 +30,3 @@ export default async function HomePage() {
     </>
   )
 }
-

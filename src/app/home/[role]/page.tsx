@@ -23,7 +23,7 @@ export default async function HomeByRole({ params }: PageProps) {
     <>
       <Hero role={role} />
 
-      <section className="max-w-7xl mx-auto px-4 py-12">
+      <section id="learning-paths" className="max-w-7xl mx-auto px-4 py-12">
         <h2 className="text-2xl font-semibold mb-6">
           {role === 'student' ? 'Discover learning paths for students' : 'Explore resources for mentors'}
         </h2>
@@ -37,5 +37,4 @@ export default async function HomeByRole({ params }: PageProps) {
     </>
   )
 }
-
 

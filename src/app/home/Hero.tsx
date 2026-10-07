@@ -17,7 +17,6 @@ export default function Hero({ role }: { role?: Role }) {
 
   const imgSrc = isMentor ? '/assets/images/mentor-hero.svg' : '/assets/images/hero.svg'
   const ctaLabel = isMentor ? 'Get Started Now' : 'Start Exploring'
-  const ctaHref = isMentor ? '/signup/mentor' : '/signup/student'
 
   return (
     <section className="-mt-16 pt-16 bg-blue-50 rounded-b-xl p-8 flex flex-col md:flex-row items-center gap-8">
@@ -29,7 +28,7 @@ export default function Hero({ role }: { role?: Role }) {
           {subtitle}
         </p>
         <Button asChild className="bg-blue-600 text-white cursor-pointer" size="lg">
-          <a href={ctaHref}>{ctaLabel}</a>
+          <a href="#learning-paths">{ctaLabel}</a>
         </Button>
       </div>
       <div className="flex-1">
@@ -45,5 +44,4 @@ export default function Hero({ role }: { role?: Role }) {
     </section>
   )
 }
-
 
