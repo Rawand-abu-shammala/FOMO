@@ -120,11 +120,12 @@ export default function Header() {
       {open && (
         <nav className="xl:hidden bg-white border-t">
           {[...navItems, 'Tracks', 'My Profile'].map((t) => {
-            let href: string
-            if (t === 'My Profile') href = '/profile'
-            else if (t === 'Home') href = '/'
-            else if (t.toLowerCase() === 'tracks') href = '/tracks'
-            else href = `/${t.toLowerCase()}`
+            const href =
+              t === 'Home'
+                ? '/home'
+                : t === 'My Profile'
+                  ? '/my-profile'
+                  : `/${t.toLowerCase()}`
             const isActive = pathname === href
             return (
               <Link
@@ -145,5 +146,4 @@ export default function Header() {
     </header>
   )
 }
-
 

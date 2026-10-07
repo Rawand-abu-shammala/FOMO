@@ -37,7 +37,7 @@ export function Footer() {
             {['Home', 'About Us', 'Contact Us'].map(item => (
               <Link
                 key={item}
-                href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                href={item === 'Home' ? '/home' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
                 className="hover:underline"
               >
                 {item}

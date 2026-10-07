@@ -9,21 +9,16 @@ interface Props {
 }
 
 export default function LayoutClient({ children }: Props) {
-  const rawPath = usePathname() ?? "";
-  // remove trailing slash(es)
-  let path = rawPath.replace(/\/+$/, "");
-  // if root becomes empty string, keep it as "/"
-  if (path === "") path = "/";
+  const path = (usePathname() ?? "").replace(/\/+$/, "") || "/";
 
-  const hideOn = ["/", "/login", "/signup", "/signup/student", "/signup/mentor"];
-  // also hide for any subpath that starts with /signup (optional)
-  const isHidden = hideOn.includes(path) || path.startsWith("/signup");
+  const shouldHideHeaderAndFooter =
+    path === "/" || path === "/login" || path.startsWith("/signup");
 
   return (
     <>
-      {!isHidden && <Header />}
+      {!shouldHideHeaderAndFooter && <Header />}
       {children}
-      {!isHidden && <Footer />}
+      {!shouldHideHeaderAndFooter && <Footer />}
     </>
   );
 }
